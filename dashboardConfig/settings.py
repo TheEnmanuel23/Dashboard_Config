@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dashboardConfigApp',
     'rest_framework',
+    'material',
+    'material.frontend',
+    'material.admin',
 ]
 
 MIDDLEWARE_CLASSES = [
