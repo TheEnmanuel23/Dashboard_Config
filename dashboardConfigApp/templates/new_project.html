@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form method="POST">{% csrf_token %}
+		<div class="proyectGeneralData">
+			{{ formProyecto }}
+		</div>
+		<div class="loadImage">
+			{{ formImage }}
+		</div>
+		<p><input type="submit" value="Send Message" name="commit" id="message_submit"/> or <a class="close" href="/">Cancel</a></p>
+	</form>
+</body>
+</html>

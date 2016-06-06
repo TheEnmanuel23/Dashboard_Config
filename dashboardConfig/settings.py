@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'dashboardConfigApp',
     'rest_framework',
     'material',
-    'material.frontend',
     'material.admin',
 ]
 
