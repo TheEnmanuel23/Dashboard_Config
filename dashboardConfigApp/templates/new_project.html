@@ -1,17 +1,16 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 </head>
 <body>
-	<form method="POST">{% csrf_token %}
-		<div class="proyectGeneralData">
-			{{ formProyecto }}
-		</div>
-		<div class="loadImage">
-			{{ formImage }}
-		</div>
-		<p><input type="submit" value="Send Message" name="commit" id="message_submit"/> or <a class="close" href="/">Cancel</a></p>
+	<form method="POST" class="viewform">
+		{% csrf_token %}
+		{{ formProyecto }}
+		{{ formImage }}
+		<input type="submit" value="Crear" class="btn" id="message_submit"/>
 	</form>
+	<script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
 </body>
 </html>

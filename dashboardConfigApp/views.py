@@ -3,7 +3,7 @@ from dashboardConfigApp.forms import *
 
 # Create your views here.
 def home_view(request):
-    return render_to_response('index.html')
+    return render('index.html')
 
 def proyecto_nuevo(request):	
 	formProyecto = ProyectForm()
