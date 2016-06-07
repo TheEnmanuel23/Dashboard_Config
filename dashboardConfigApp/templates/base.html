@@ -6,8 +6,13 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor/bootstrap.min.css'%}">
 </head>
 <body>
-	<h1>Mi proyecto de prueba</h1>
-
+	<h1>Creación de proyectos</h1>
+	<nav>
+		<ul>
+			<li><a href="{% url 'home' %}">Inicio</a></li>
+			<li><a href="{% url 'new_project' %}">Nuevo proyecto</a></li>
+		</ul>
+	</nav>
 	{% block content %}
 	{% endblock %}
 
