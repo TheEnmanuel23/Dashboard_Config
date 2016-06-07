@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 	{% load widget_tweaks %}
-	<form action="." method="POST" class="viewform" enctype="multipart/form-data" role="form">
+	<form action="." method="POST" data-toggle="validator" enctype="multipart/form-data" role="form">
 		{% csrf_token %}
 		 <div class="form-group">
-		 	<label>Nombre del proyecto</label>
-		 	{{ formProyecto.nombre|add_class:"miClase"}}
+		 	<label class="control-label">Nombre del proyecto</label>
+		 	{{ formProyecto.nombre|attr:"required:required"}}
 		 </div>
 		 <div class="form-group">
-		 	<label>Descripción de la imagen</label>
-		 	{{ formImage.descripcion|attr:"rows:5" }}
+		 	<label class="control-label">Descripción de la imagen</label>
+		 	{{ formImage.descripcion|attr:"rows:5"|attr:"required:required" }}
 		 </div>
-	 	{{ formImage.imagen }}
+	 	{{ formImage.imagen|attr:"required:required"}}
 	 	<input type="submit" value="Crear" class="btn" id="message_submit"/>
 	</form>
 {% endblock content %}
