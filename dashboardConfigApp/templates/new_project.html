@@ -5,14 +5,13 @@
 		{% csrf_token %}
 		 <div class="form-group">
 		 	<label>Nombre del proyecto</label>
-		 	{{ formProyecto.nombre|add_class:"miClase"|attr:"requerid" }}
+		 	{{ formProyecto.nombre|add_class:"miClase"}}
 		 </div>
 		 <div class="form-group">
 		 	<label>Descripción de la imagen</label>
-		 	{{ formImage.descripcion }}
-		 	{{ formImage.imagen }}
+		 	{{ formImage.descripcion|attr:"rows:5" }}
 		 </div>
-				
-				<input type="submit" value="Crear" class="btn" id="message_submit"/>
+	 	{{ formImage.imagen }}
+	 	<input type="submit" value="Crear" class="btn" id="message_submit"/>
 	</form>
 {% endblock content %}

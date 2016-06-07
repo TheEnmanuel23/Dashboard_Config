@@ -5,10 +5,11 @@ class ProyectForm(forms.ModelForm):
 	class Meta:
 		model = Proyecto
 		fields = [
-			'nombre',
+			'nombre'
 		]
 
-class ImageForm(forms.ModelForm):
+class ImageForm(forms.ModelForm):	
+	descripcion = forms.CharField(widget=forms.Textarea())
 	class Meta:
 		model = Image
 		fields = [
