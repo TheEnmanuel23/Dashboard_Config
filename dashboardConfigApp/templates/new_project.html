@@ -1,9 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-	<form action="." method="POST" class="viewform" enctype="multipart/form-data">
+	{% load widget_tweaks %}
+	<form action="." method="POST" class="viewform" enctype="multipart/form-data" role="form">
 		{% csrf_token %}
-		{{ formProyecto }}
-		{{ formImage }}
-		<input type="submit" value="Crear" class="btn" id="message_submit"/>
+		 <div class="form-group">
+		 	<label>Nombre del proyecto</label>
+		 	{{ formProyecto.nombre|add_class:"miClase"|attr:"requerid" }}
+		 </div>
+		 <div class="form-group">
+		 	<label>Descripción de la imagen</label>
+		 	{{ formImage.descripcion }}
+		 	{{ formImage.imagen }}
+		 </div>
+				
+				<input type="submit" value="Crear" class="btn" id="message_submit"/>
 	</form>
 {% endblock content %}
