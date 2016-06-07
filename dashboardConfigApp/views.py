@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from dashboardConfigApp.forms import *
 from django.http import HttpResponseRedirect
+
 # Create your views here.
 def home_view(request):
     return render(request, 'index.html')
@@ -15,7 +16,7 @@ def proyecto_nuevo(request):
 			image = formImage.save(commit = False)
 			image.proyecto = proyecto
 			image.save()
-			HttpResponseRedirect("/")
+			return HttpResponseRedirect("/")
 
 	formProyecto = ProyectForm()
 	formImage = ImageForm()
