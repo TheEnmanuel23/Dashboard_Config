@@ -1,16 +1,9 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
 	<form action="." method="POST" class="viewform" enctype="multipart/form-data">
 		{% csrf_token %}
 		{{ formProyecto }}
 		{{ formImage }}
 		<input type="submit" value="Crear" class="btn" id="message_submit"/>
 	</form>
-	<script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
-</body>
-</html>
+{% endblock content %}

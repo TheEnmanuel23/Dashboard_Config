@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor/bootstrap.min.css'%}">
+</head>
+<body>
+	<h1>Mi proyecto de prueba</h1>
+
+	{% block content %}
+	{% endblock %}
+
+	<script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
+	<script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+</body>
+</html>

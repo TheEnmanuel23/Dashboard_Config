@@ -5,9 +5,7 @@ from django.http import HttpResponseRedirect
 def home_view(request):
     return render(request, 'index.html')
 
-def proyecto_nuevo(request):	
-	formProyecto = ProyectForm()
-	formImage = ImageForm();
+def proyecto_nuevo(request):
 	if(request.method == 'POST'):
 		formProyecto = ProyectForm(request.POST)
 		formImage = ImageForm(request.POST, request.FILES)
@@ -19,4 +17,9 @@ def proyecto_nuevo(request):
 			image.save()
 			HttpResponseRedirect("/")
 
-	return render(request, 'new_project.html', {'formProyecto': formProyecto, 'formImage': formImage})
+	formProyecto = ProyectForm()
+	formImage = ImageForm()
+	data = {
+		'formProyecto': formProyecto, 'formImage': formImage
+	}
+	return render(request, 'new_project.html', data)
