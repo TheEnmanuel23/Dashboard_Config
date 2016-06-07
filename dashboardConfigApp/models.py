@@ -16,7 +16,7 @@ class Image(models.Model):
 	proyecto = models.ForeignKey(Proyecto)
 
 	def __str__(self):
-		return self.descripcion + " - " + str(self.proyecto.fechaCreacion)
+		return self.imagen.name
 
 class Capa(models.Model):
 	descripcion = models.CharField(max_length=140)

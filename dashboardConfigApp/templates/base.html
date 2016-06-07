@@ -3,22 +3,39 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor/bootstrap.min.css'%}">
+	<!-- CUSTOM CSS -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor/dropzone.min.css'%}">
+
+	<!-- CUSTOM CSS -->
 	<link rel="stylesheet" type="text/css" href="{% static 'css/new_project.css' %}">
 </head>
 <body>
 	<h1>Creación de proyectos</h1>
-	<nav>
-		<ul>
-			<li><a href="{% url 'home' %}">Inicio</a></li>
-			<li><a href="{% url 'new_project' %}">Nuevo proyecto</a></li>
-		</ul>
+	<nav class="navbar navbar-default">
+  	<div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="{% url 'home' %}">Dashboard personalizado</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li><a href="{% url 'home' %}">Home</a></li>
+	      <li><a href="{% url 'new_project' %}">Nuevo proyecto</a></li>
+	    </ul>
+	  </div>
 	</nav>
 	{% block content %}
 	{% endblock %}
-
+	
+	<!-- VENDOR JAVASCRIPT -->
 	<script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
-	<script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="{% static 'js/vendor/bootstrap-filestyle.min.js' %}"></script>
 	<script src="{% static 'js/vendor/validator.min.js' %}"></script>
+	<script src="{% static 'js/vendor/dropzone.min.js' %}"></script>
+	
+
+	<!-- CUSTOM JAVASCRIPT -->
+	
+	<script src="{% static 'js/loadImageDropzone.js' %}"></script>
 </body>
 </html>

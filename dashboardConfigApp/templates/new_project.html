@@ -3,15 +3,33 @@
 	{% load widget_tweaks %}
 	<form action="." method="POST" data-toggle="validator" enctype="multipart/form-data" role="form">
 		{% csrf_token %}
-		 <div class="form-group">
-		 	<label class="control-label">Nombre del proyecto</label>
-		 	{{ formProyecto.nombre|attr:"required:required"}}
-		 </div>
-		 <div class="form-group">
-		 	<label class="control-label">Descripción de la imagen</label>
-		 	{{ formImage.descripcion|attr:"rows:5"|attr:"required:required" }}
-		 </div>
-	 	{{ formImage.imagen|attr:"required:required"}}
-	 	<input type="submit" value="Crear" class="btn" id="message_submit"/>
+	 	 <div class="panel panel-default">
+	 	 	<div class="panel-heading">Datos del proyecto</div>
+	 	 	<div class="panel-body">
+	 	 		<label>Nombre del proyecto</label>
+		 		{{ formProyecto.nombre|add_class:"form-control"|attr:"required:required"}}
+	 	 	</div>	 		
+	 	</div>
+	 	<div class="panel panel-default">
+	 		<div class="panel-heading">
+	 			Configuración de imagen
+	 		</div>
+	 		<div class="panel-body">
+	 			<div class="panel panel-default"> 				
+	 				<div class="panel-body">
+	 					{{ formImage.imagen|add_class:"filestyle"|attr:"data-placeholder:No hay imagen"|attr:"data-buttonName:btn-primary"|attr:"required:required"|attr:" data-buttonText:Buscar imagen" }}
+	 				</div>
+	 			</div>
+	 			<div class="panel panel-default">
+	 				<div class="panel-body">	 					
+			 			<label>Descripción de la imagen</label>
+				 		{{ formImage.descripcion|add_class:"form-control"|attr:"rows:5"|attr:"required:required" }}
+	 				</div>
+	 			</div>
+
+	 		</div>
+	 	</div>
+	 	
+	 	<input type="submit" value="Crear" class="btn btn-success" id="btnSave"/>
 	</form>
 {% endblock content %}
