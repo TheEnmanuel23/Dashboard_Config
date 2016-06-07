@@ -5,7 +5,7 @@
 	<title></title>
 </head>
 <body>
-	<form method="POST" class="viewform">
+	<form action="." method="POST" class="viewform" enctype="multipart/form-data">
 		{% csrf_token %}
 		{{ formProyecto }}
 		{{ formImage }}

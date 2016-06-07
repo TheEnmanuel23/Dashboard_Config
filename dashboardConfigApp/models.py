@@ -7,10 +7,16 @@ class Proyecto(models.Model):
     nombre = models.CharField(max_length=100)
     fechaCreacion = models.DateTimeField(default=timezone.now)
 
+    def __str__(self):
+    	return self.nombre
+
 class Image(models.Model):
 	descripcion = models.CharField(max_length=100)
-	imagen = models.ImageField(upload_to='images/', default='images/none_image.jpg')
+	imagen = models.FileField(upload_to='images/', default='images/none_image.jpg')
 	proyecto = models.ForeignKey(Proyecto)
+
+	def __str__(self):
+		return self.descripcion + " - " + str(self.proyecto.fechaCreacion)
 
 class Capa(models.Model):
 	descripcion = models.CharField(max_length=140)

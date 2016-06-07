@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from dashboardConfigApp.views import *
+from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home_view, name="home"),
-    url(r'^new_project/', proyecto_nuevo, name="new_project")
+    url(r'^new_project/', proyecto_nuevo, name="new_project"),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT,}),
 ]
