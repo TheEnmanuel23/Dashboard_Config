@@ -3,13 +3,14 @@
 	{% load widget_tweaks %}
 	<form action="." method="POST" data-toggle="validator" enctype="multipart/form-data" role="form">
 		{% csrf_token %}
-	 	 <div class="panel panel-default">
+	
+ 	 	<div class="panel panel-default">
 	 	 	<div class="panel-heading">Datos del proyecto</div>
 	 	 	<div class="panel-body">
 	 	 		<label>Nombre del proyecto</label>
 		 		{{ formProyecto.nombre|add_class:"form-control"|attr:"required:required"}}
 	 	 	</div>	 		
-	 	</div>
+	 	</div>	
 	 	<div class="panel panel-default">
 	 		<div class="panel-heading">
 	 			Configuración de imagen
@@ -28,8 +29,7 @@
 	 			</div>
 
 	 		</div>
-	 	</div>
-	 	
-	 	<input type="submit" value="Crear" class="btn btn-success" id="btnSave"/>
+	 	</div>	 	
+ 		<input type="submit" value="Crear" class="btn btn-success" id="btnSave"/>
 	</form>
 {% endblock content %}
