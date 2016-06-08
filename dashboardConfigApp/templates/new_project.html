@@ -3,14 +3,33 @@
 	{% load widget_tweaks %}
 	<form action="." method="POST" data-toggle="validator" enctype="multipart/form-data" role="form">
 		{% csrf_token %}
-	
- 	 	<div class="panel panel-default">
-	 	 	<div class="panel-heading">Datos del proyecto</div>
-	 	 	<div class="panel-body">
-	 	 		<label>Nombre del proyecto</label>
-		 		{{ formProyecto.nombre|add_class:"form-control"|attr:"required:required"}}
-	 	 	</div>	 		
-	 	</div>	
+		
+		<a href="#" class="btn btn-md btn-success" 
+   data-toggle="modal" 
+   data-target="#basicModal"><span class="glyphicon glyphicon-plus"></span> Nuevo proyecto</a>
+
+		<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <div class="modal-header">
+			            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
+			            <h4 class="modal-title" id="myModalLabel">Nuevo proyecto</h4>
+		            </div>
+		            <div class="modal-body">
+				 	 	<div class="panel panel-default">
+					 	 	<div class="panel-heading">Nombre del proyecto</div>
+					 	 	<div class="panel-body">
+						 		{{ formProyecto.nombre|add_class:"form-control"|attr:"required:required"}}
+					 	 	</div>	 		
+					 	</div>		                
+		            </div>
+		            <div class="modal-footer">
+		                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+		                <button type="button" class="btn btn-primary">Crear</button>
+		        	</div>
+		    	</div>
+		  	</div>
+		</div>
 	 	<div class="panel panel-default">
 	 		<div class="panel-heading">
 	 			Configuración de imagen
