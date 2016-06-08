@@ -7,48 +7,64 @@
 		<a href="#" class="btn btn-md btn-success" 
    data-toggle="modal" 
    data-target="#basicModal"><span class="glyphicon glyphicon-plus"></span> Nuevo proyecto</a>
-
 		<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
 		    <div class="modal-dialog">
 		        <div class="modal-content">
 		            <div class="modal-header">
-			            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
+			            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="btnCloseCreationsProject"><span class="glyphicon glyphicon-remove"></span></button>
 			            <h4 class="modal-title" id="myModalLabel">Nuevo proyecto</h4>
 		            </div>
 		            <div class="modal-body">
 				 	 	<div class="panel panel-default">
 					 	 	<div class="panel-heading">Nombre del proyecto</div>
 					 	 	<div class="panel-body">
-						 		{{ formProyecto.nombre|add_class:"form-control"|attr:"required:required"}}
+						 		{{ formProyecto.nombre|add_class:"form-control"|attr:"required:required"|attr:"id:txtProjectName"}}
 					 	 	</div>	 		
 					 	</div>		                
 		            </div>
 		            <div class="modal-footer">
-		                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-		                <button type="button" class="btn btn-primary">Crear</button>
+		                <button id="btnCancelCreationProject" type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+		                <button type="button" data-dismiss="modal" class="btn btn-primary" id="btnCreateNewProject">Crear</button>
+
 		        	</div>
 		    	</div>
 		  	</div>
 		</div>
-	 	<div class="panel panel-default">
-	 		<div class="panel-heading">
-	 			Configuración de imagen
+		<div class="panel panel-default contentNewProject" id="contentNewProject">
+			<div class="panel-heading">
+		 		<strong id="nameNewProject">Proyecto:</strong>
 	 		</div>
 	 		<div class="panel-body">
-	 			<div class="panel panel-default"> 				
-	 				<div class="panel-body">
-	 					{{ formImage.imagen|add_class:"filestyle"|attr:"data-placeholder:No hay imagen"|attr:"data-buttonName:btn-primary"|attr:"required:required"|attr:" data-buttonText:Buscar imagen" }}
-	 				</div>
-	 			</div>
 	 			<div class="panel panel-default">
-	 				<div class="panel-body">	 					
-			 			<label>Descripción de la imagen</label>
-				 		{{ formImage.descripcion|add_class:"form-control"|attr:"rows:5"|attr:"required:required" }}
-	 				</div>
-	 			</div>
-
-	 		</div>
-	 	</div>	 	
+			 		<div class="panel-heading">
+			 			Configuración de imagen
+			 		</div>
+			 		<div class="panel-body">
+			 			<div class="row">
+			 				<div class="col-lg-5">
+			 					<div class="panel panel-default"> 				
+					 				<div class="panel-body">
+					 					{{ formImage.imagen|add_class:"filestyle"|attr:"data-placeholder:No hay imagen"|attr:"data-buttonName:btn-primary"|attr:"required:required"|attr:" data-buttonText:Buscar imagen"|attr:"id:btnOpenFile" }}
+					 				</div>
+			 					</div>
+					 			<div class="panel panel-default">
+					 				<div class="panel-body">	 					
+							 			<label>Descripción de la imagen</label>
+								 		{{ formImage.descripcion|add_class:"form-control"|attr:"rows:5"|attr:"required:required" }}
+					 				</div>
+					 			</div>
+			 				</div>
+			 				<div class="col-lg-7">
+			 					<div id="containerImage">
+			 						
+			 					</div>
+			 				</div>
+			 			</div>
+			 			
+			 		</div>
+		 		</div>	 
+	 		</div>		 		
+ 		</div>	
  		<input type="submit" value="Crear" class="btn btn-success" id="btnSave"/>
 	</form>
 {% endblock content %}
