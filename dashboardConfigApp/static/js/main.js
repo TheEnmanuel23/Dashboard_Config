@@ -11,9 +11,9 @@ $(document).ready(function(){
 	});
 
 	$("#btnOpenFile").change(function(e){
-		var workSpace = Snap("#containerImage");
+		var workSpace = Snap("#containerImage-preview");
 		if($('#btnOpenFile').val() != '') {
-			$('#containerImage').empty();
+			$('#containerImage-preview').empty();
 			var url = URL.createObjectURL(e.target.files[0]);
 			Snap.load(url, function ( data ) {
 			   	workSpace.append(data);
