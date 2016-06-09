@@ -25,7 +25,9 @@ ConfigDashboard.Views.App = Backbone.View.extend({
 	loadImageIntoContainer:  function(e){
 		var workSpace = Snap("#containerImage");
 		if($('#btnOpenFile').val() != '') {
+			$('#layers-description-table-body').empty();
 			$('#containerImage').empty();
+			window.collections.capasCollections.reset();
 			var url = URL.createObjectURL(e.target.files[0]);
 			Snap.load(url, function ( data ) {
 			   	workSpace.append(data);

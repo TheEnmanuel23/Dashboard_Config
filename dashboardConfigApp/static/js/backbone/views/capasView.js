@@ -1,23 +1,26 @@
 ConfigDashboard.Views.CapasView = Backbone.View.extend({
-	el: "body",
-	initialize: function(){
-		this.model.on("add", this.render)
-	},
-	render: function(){
-		var $tbody = $('#layers-description-table-body');
-		$tbody.empty();
-		
-	},
+	el: 'body',
 	events: {
 		"click #readImageLoaded" : 'readImageData'
+	},
+	render: function(){
+		self = this;
+		var template = _.template($('#layers-description-template').html());
+		var json = window.collections.capasCollections.toJSON();
+		json.forEach(function(item){
+			var html = template(item);
+			self.$el.find('#layers-description-table-body').append(html);
+		})
+		return this;
 	},
 	readImageData: function(){
 		var getAllPathElement = $("svg").find("path");
 		getAllPathElement.each(function(){
 			window.collections.capasCollections.add({
-				id: $(this).attr("id"),
-				descripcion: ''
+				'id': $(this).attr("id"),
+				'descripcion': ''
 			});
 		});
+		this.render();
 	},
 });
