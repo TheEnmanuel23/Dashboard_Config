@@ -4,12 +4,6 @@ $(document).ready(function(){
 		model : window.collections.capasCollections,
 	});
 	window.views.app = new ConfigDashboard.Views.App($('body'));
-	window.routers.steps = new ConfigDashboard.Routers.StepsConfig();
-	window.routers.steps.on("route:root", function(){
-	});
-	window.routers.steps.on("route:step", function(){
-	});
-
 	Backbone.history.start({
 			root: '/',
 			pushState: true

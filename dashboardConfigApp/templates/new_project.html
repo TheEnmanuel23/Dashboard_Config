@@ -3,43 +3,22 @@
 	{% load widget_tweaks %}
 	<form action="." method="POST" data-toggle="validator" enctype="multipart/form-data" role="form">
 		{% csrf_token %}
-		
-		<a href="#" class="btn btn-md btn-success" 
-   data-toggle="modal" 
-   data-target="#basicModal"><span class="glyphicon glyphicon-plus"></span> Nuevo proyecto</a>
-		<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-		    <div class="modal-dialog">
-		        <div class="modal-content">
-		            <div class="modal-header">
-			            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="btnCloseCreationsProject"><span class="glyphicon glyphicon-remove"></span></button>
-			            <h4 class="modal-title" id="myModalLabel">Nuevo proyecto</h4>
-		            </div>
-		            <div class="modal-body">
-				 	 	<div class="panel panel-default">
-					 	 	<div class="panel-heading">Nombre del proyecto</div>
-					 	 	<div class="panel-body">
-						 		{{ formProyecto.nombre|add_class:"form-control"|attr:"required:required"|attr:"id:txtProjectName"}}
-					 	 	</div>	 		
-					 	</div>		                
-		            </div>
-		            <div class="modal-footer">
-		                <button id="btnCancelCreationProject" type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-		                <button type="button" data-dismiss="modal" class="btn btn-primary" id="btnCreateNewProject">Crear</button>
-
-		        	</div>
-		    	</div>
-		  	</div>
-		</div>
-		<div class="panel panel-default contentNewProject" id="contentNewProject">
+		<div class="panel panel-default contentNewProject">
 			<div class="panel-heading">
-		 		<strong id="nameNewProject">Proyecto:</strong>
+		 		<strong id="nameNewProject">Nuevo proyecto</strong>
 	 		</div>
 	 		<div class="panel-body">
 	 			<div class="panel panel-default">
+		 	 		<div class="panel-heading">Nombre del proyecto</div>
+			 	 	<div class="panel-body">
+				 		{{ formProyecto.nombre|add_class:"form-control"|attr:"required:required"|attr:"id:txtProjectName"}}
+			 	 	</div>	 		
+		 		</div>
+		 		<div class="panel panel-default">
 			 		<div class="panel-heading">
 			 			Configuración de imagen
 			 		</div>
-			 		<div class="panel-body">
+		 			<div class="panel-body">
 			 			<div class="row">
 			 				<div class="col-lg-5">
 			 					<div class="panel panel-default"> 				
@@ -51,7 +30,6 @@
 					 				<div class="panel-body">	 					
 							 			<label>Descripción de la imagen</label>
 								 		{{ formImage.descripcion|add_class:"form-control"|attr:"rows:5"|attr:"required:required" }}
-								 		<input class="btn btn-default readImageLoaded" id="readImageLoaded"" type="button" value="Leer esta imagen" />
 					 				</div>
 					 			</div>
 			 				</div>
@@ -67,48 +45,14 @@
 					 				</div>
 					 			</div>
 			 				</div>
-			 			</div>
-			 			
-			 		</div>
-		 		</div>
-		 		<div class="panel panel-default config-layers" id="config-layers">
-			 		<div class="panel-heading">
-			 			Configuración de Capas
-			 		</div>
-			 		<div class="panel-body">
-			 			<div class="row">
-			 				<div class="col-lg-7">
-			 					<table class="table table-striped table-layers-descripcion" id="table-layers-descripcion">
-			 						<thead>
-			 							<th>Código</th>
-			 							<th>Descripción</th>
-			 						</thead>
-			 						<tbody id="layers-description-table-body">
-			 						</tbody>
-			 					</table>
-			 				</div>
-			 				<div class="col-lg-5">
-			 					
-			 				</div>
-			 			</div>
-			 		</div>
-			 	</div>
-	 		</div>		 		
- 		</div>	
- 		<input type="submit" value="Crear" class="btn btn-success" id="btnSave"/>
+			 			</div>		 			
+ 					</div>
+ 				</div>
+ 				<div class="acciones"> 					
+			 		<input type="submit" value="Guardar" class="btn btn-success" id="btnSave"/>
+			 		<input type="submit" value="Guardar y configurar" class="btn btn-success"/>
+ 				</div>
+ 			</div>
+ 		</div>
 	</form>
-
-
-<script type="text/template" id="layers-description-template">
-	<tr>
-		<div class="row">
-			<td class="col-lg-3">
-				<input disabled type="text" class="form-control" id="inputSuccess2" value="<%= id %>">
-			</td>
-			<td class="col-lg-9">
-		  		<input type="text" class="form-control" id="inputSuccess2" value="<%= descripcion %>">
-				</td>
-		</div>
-	</tr>
-</script>
 {% endblock content %}
