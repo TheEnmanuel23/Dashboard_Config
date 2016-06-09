@@ -1,23 +1,19 @@
 $(document).ready(function(){
-	window.views.app = new StepsConfig.Views.App($('body'));
-	window.routers.steps = new StepsConfig.Routers.StepsConfig();
+	window.models.capasModel = new ConfigDashboard.Models.CapasModel();
+	window.collections.capasCollections = new ConfigDashboard.Collections.CapasCollection();
+	window.views.capasView = new ConfigDashboard.Views.CapasView({
+		model : window.collections.capasCollections
+	});
+
+	window.views.app = new ConfigDashboard.Views.App($('body'));
+	window.routers.steps = new ConfigDashboard.Routers.StepsConfig();
 	window.routers.steps.on("route:root", function(){
 	});
 	window.routers.steps.on("route:step", function(){
 	});
+
 	Backbone.history.start({
 			root: '/',
 			pushState: true
-	});
-
-	$("#btnOpenFile").change(function(e){
-		var workSpace = Snap("#containerImage-preview");
-		if($('#btnOpenFile').val() != '') {
-			$('#containerImage-preview').empty();
-			var url = URL.createObjectURL(e.target.files[0]);
-			Snap.load(url, function ( data ) {
-			   	workSpace.append(data);
-			});
-		}
 	});
 });

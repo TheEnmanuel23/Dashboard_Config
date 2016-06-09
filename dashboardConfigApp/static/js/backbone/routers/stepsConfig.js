@@ -1,4 +1,4 @@
-StepsConfig.Routers.StepsConfig = Backbone.Router.extend({
+ConfigDashboard.Routers.StepsConfig = Backbone.Router.extend({
 	routes:{
 		"new_project/": "rootProject",
 		"new_project/:projectName": "step"

@@ -51,6 +51,7 @@
 					 				<div class="panel-body">	 					
 							 			<label>Descripción de la imagen</label>
 								 		{{ formImage.descripcion|add_class:"form-control"|attr:"rows:5"|attr:"required:required" }}
+								 		<input class="btn btn-default readImageLoaded" id="readImageLoaded"" type="button" value="Leer esta imagen" />
 					 				</div>
 					 			</div>
 			 				</div>
@@ -60,16 +61,41 @@
 							 			Previsualización de la imagen
 							 		</div>
 					 				<div class="panel-body">
-					 					<div class="containerImage-preview" id="containerImage-preview">
-					 						
-					 					</div>
+					 					<div class="containerImage" id="containerImage">
+					 				
+			 							</div>
 					 				</div>
 					 			</div>
 			 				</div>
 			 			</div>
 			 			
 			 		</div>
-		 		</div>	 
+		 		</div>
+		 		<div class="panel panel-default config-layers" id="config-layers">
+			 		<div class="panel-heading">
+			 			Configuración de Capas
+			 		</div>
+			 		<div class="panel-body">
+			 			<div class="row">
+			 				<div class="col-lg-7">
+			 					<table class="table table-striped">
+			 						<thead>
+			 							<th>Código</th>
+			 							<th>Descripción</th>
+			 						</thead>
+			 						<tbody id="layers-description-table-body">
+			 							<script type="text/template" id="layers-description-template">
+											
+										</script>
+			 						</tbody>
+			 					</table>
+			 				</div>
+			 				<div class="col-lg-5">
+			 					
+			 				</div>
+			 			</div>
+			 		</div>
+			 	</div>
 	 		</div>		 		
  		</div>	
  		<input type="submit" value="Crear" class="btn btn-success" id="btnSave"/>

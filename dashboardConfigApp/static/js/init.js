@@ -1,7 +1,12 @@
-window.StepsConfig = {};
+window.ConfigDashboard = {};
 window.app = {};
 window.routers = {};
 window.views = {};
+window.collections = {};
+window.models = {};
+window.urlImage = {};
 
-StepsConfig.Routers = {};
-StepsConfig.Views = {}
+ConfigDashboard.Routers = {};
+ConfigDashboard.Views = {};
+ConfigDashboard.Collections = {};
+ConfigDashboard.Models = {};
