@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from .serializers import *
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+
 # Create your views here.
 def home_view(request):
     return render(request, 'index.html')
@@ -28,9 +29,10 @@ def proyecto_nuevo(request):
 	return render(request, 'new_project.html', data)
 
 @api_view(['GET','POST', 'PUT'])
-def LayersApi(request, idImage):
+def LayersApi(request, idProject):
 	if(request.method == 'GET'):
-		queryset = Capa.objects.all()
+		imagesList = Image.objects.filter(proyecto__pk = idProject)
+		queryset =  Capa.objects.filter(image__in = imagesList)
 		serializer = CapaSerializer(queryset, many =True)
 		return Response(serializer.data)
 
