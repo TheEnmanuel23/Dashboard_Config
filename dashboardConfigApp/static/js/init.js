@@ -5,7 +5,6 @@ window.views = {};
 window.collections = {};
 window.models = {};
 window.urlImage = {};
-window.templates = {};
 
 ConfigDashboard.Routers = {};
 ConfigDashboard.Views = {};

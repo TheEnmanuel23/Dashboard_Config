@@ -39,7 +39,7 @@ def LayersApi(request, idProject):
 @api_view(['GET','POST', 'PUT'])
 def GetAllProjectApi(request):
 	if(request.method == 'GET'):
-		queryset = Proyecto.objects.all()
+		queryset = Proyecto.objects.all().order_by('-fechaCreacion')
 		serializer = ProjectSerializer(queryset, many =True)
 		return Response(serializer.data)
 
