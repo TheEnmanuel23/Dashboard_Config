@@ -1,4 +1,4 @@
-ConfigDashboard.Views.ProjectView = Backbone.View.extend({	
+ConfigDashboard.Views.ProjectView = Backbone.View.extend({
 	render: function(){
 		var data = this.model.toJSON();
 		template = _.template($('#allProjectTemplate').html() )
