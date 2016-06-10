@@ -20,7 +20,8 @@ from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT,}),
     url(r'^$', home_view, name="home"),
     url(r'^new_project/', proyecto_nuevo, name="new_project"),
-    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT,}),
+    url(r'^get-layers/(\d+)$', CapasApi, name='get-layers'),
 ]

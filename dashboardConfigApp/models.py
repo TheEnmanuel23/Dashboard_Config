@@ -4,11 +4,10 @@ from django.utils import timezone
 # Create your models here.
 
 class Proyecto(models.Model):
-    nombre = models.CharField(max_length=100)
-    fechaCreacion = models.DateTimeField(default=timezone.now)
-
-    def __str__(self):
-    	return self.nombre
+	nombre = models.CharField(max_length=100)
+	fechaCreacion = models.DateTimeField(default=timezone.now)
+	def __str__(self):
+		return self.nombre
 
 class Image(models.Model):
 	descripcion = models.CharField(max_length=100)

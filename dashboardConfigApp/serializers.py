@@ -4,20 +4,20 @@ from .models import *
 class ProjectSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Proyecto
-		fields = ('nombre', 'fechaCreacion',)
+		fields = ('pk','nombre', 'fechaCreacion',)
 
 class TipoCampoSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = TipoCampo
 
 class ImageSerializer(serializers.ModelSerializer):
-	proyecto = ProjectSerializer
+	proyecto = ProjectSerializer()
 	class Meta:
 		model = Image
-		fields = ('imagen', 'descripcion', 'proyecto')
+		fields = ('pk','imagen', 'descripcion', 'proyecto')
 
 class CapaSerializer(serializers.ModelSerializer):
-	image = ImageSerializer
+	image = ImageSerializer()
 	class Meta:
-		model = Indicador
-		fields = ('codigo', 'descripcion', 'image')
+		model = Capa
+		fields = ('pk','image', 'descripcion')

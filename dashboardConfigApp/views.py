@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from dashboardConfigApp.forms import *
 from django.http import HttpResponseRedirect
-
+from .serializers import *
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 # Create your views here.
 def home_view(request):
     return render(request, 'index.html')
@@ -24,3 +26,10 @@ def proyecto_nuevo(request):
 		'formProyecto': formProyecto, 'formImage': formImage
 	}
 	return render(request, 'new_project.html', data)
+
+@api_view(['GET','POST', 'PUT'])
+def CapasApi(request, idProject):
+	if(request.method == 'GET'):
+		queryset = Capa.objects.all()
+		serializer = CapaSerializer(queryset, many =True)
+		return Response(serializer.data)
