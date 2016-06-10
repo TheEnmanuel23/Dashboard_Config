@@ -5,4 +5,5 @@ $(document).ready(function(){
 		model : window.collections.capasCollections,
 	});
 	window.views.app = new ConfigDashboard.Views.App($('body'));
+
 });

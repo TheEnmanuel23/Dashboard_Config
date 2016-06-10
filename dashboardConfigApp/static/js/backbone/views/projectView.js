@@ -24,6 +24,7 @@ ConfigDashboard.Views.ProjectViewSingle = Backbone.View.extend({
 		return this;
 	},
 	goToConfig_click: function(){
-
+		json = this.model.toJSON();
+		idProject = json['pk'];
 	}
 });
