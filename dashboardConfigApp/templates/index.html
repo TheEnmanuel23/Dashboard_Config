@@ -1,4 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
- 	<h5>Hola pagina de inicio</h5>
+  	<h2>Lista de proyectos</h2>
+  	<div class="container">
+		<table class="table allProject_table">
+ 			<thead>
+ 				<th>Id</th>
+ 				<th>Nombre</th>
+ 				<th>Fecha de creación</th>
+ 				<th></th>
+ 			</thead>
+ 			<tbody id="allProject_table_tbody">
+ 				
+ 			</tbody>
+ 		</table>
+ 	</div>
+ 	<script type="text/template" id="allProjectTemplate">
+ 		<tr>
+ 			<td><%= pk %></td>
+ 			<td><%= nombre %></td>
+ 			<td><%= fechaCreacion %></td>
+ 			<td><a href="#">Ir
+ 			a configuración <span class="glyphicon glyphicon-share-alt"></span></a></td>
+ 		</tr>
+ 	</script>
 {% endblock content %}
