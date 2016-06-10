@@ -1,16 +1,29 @@
-ConfigDashboard.Views.ProjectView = Backbone.View.extend({
+ConfigDashboard.Views.ProjectsView = Backbone.View.extend({
 	initialize: function(){
-		this.model.on('add', this.render);
-		self = this;
+		this.model.on('add', this.addSingle);
 	},
-	template: _.template($('#allProjectTemplate').html()),
+	addSingle: function(project){
+		if(project.view == null)
+			project.view = new ConfigDashboard.Views.ProjectViewSingle({model: project});
+		project.view.render();
+		project.view.$el.appendTo('#allProject_table_tbody');
+	}
+});
+
+ConfigDashboard.Views.ProjectViewSingle = Backbone.View.extend({
+	initialize: function(){
+	},
+	events: {
+		"click .goToConfig": "goToConfig_click"
+	},
 	render: function(){
-		$('#allProject_table_tbody').empty();
-		var data = self.model.toJSON();
-		data.forEach(function(item){
-			var html = self.template(item);
-			self.setElement(html);
-			self.$el.appendTo('#allProject_table_tbody');
-		})
+		var template = _.template($('#allProjectTemplate').html());
+		json = this.model.toJSON();
+		html = template(json);
+		this.setElement(html);
+		return this;
 	},
+	goToConfig_click: function(){
+
+	}
 });
