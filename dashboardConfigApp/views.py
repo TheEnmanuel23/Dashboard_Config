@@ -28,8 +28,29 @@ def proyecto_nuevo(request):
 	return render(request, 'new_project.html', data)
 
 @api_view(['GET','POST', 'PUT'])
-def CapasApi(request, idProject):
+def LayersApi(request, idImage):
 	if(request.method == 'GET'):
 		queryset = Capa.objects.all()
 		serializer = CapaSerializer(queryset, many =True)
+		return Response(serializer.data)
+
+@api_view(['GET','POST', 'PUT'])
+def GetAllProjectApi(request):
+	if(request.method == 'GET'):
+		queryset = Proyecto.objects.all()
+		serializer = ProjectSerializer(queryset, many =True)
+		return Response(serializer.data)
+
+@api_view(['GET','POST', 'PUT'])
+def GetAllImageApi(request):
+	if(request.method == 'GET'):
+		queryset = Image.objects.all()
+		serializer = ImageSerializer(queryset, many =True)
+		return Response(serializer.data)
+
+@api_view(['GET','POST', 'PUT'])
+def GetAllImageApiByProject(request, idProject):
+	if(request.method == 'GET'):
+		queryset = Image.objects.all()
+		serializer = ImageSerializer(queryset, many =True)
 		return Response(serializer.data)
