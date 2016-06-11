@@ -4,9 +4,4 @@ $(document).ready(function(){
 		model: window.collections.allProjectsCollection
 	});
 	window.collections.allProjectsCollection.fetch();
-
-	// window.routers.routerConfigDashboard = new ConfigDashboard.Routers.RoutersConfigDashboard();
-	/*window.routers.routerConfigDashboard.on("route:configProject", function(){
-
-	});*/
 });
