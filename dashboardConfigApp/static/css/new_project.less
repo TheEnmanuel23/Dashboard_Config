@@ -1,5 +1,9 @@
 .acciones{
 }
+
+.container-list-projects{
+	margin: 20px;
+}
 .containerImage{
 	display: flex;
 	justify-content: center;
@@ -19,5 +23,68 @@
 			}
 		}
 		
+	}
+}
+
+.header-body{
+    position: relative;
+    z-index: 10;
+    height: 100px;
+}
+
+.navbar-main{
+	margin-bottom: 0;
+}
+
+.row-panel-project{
+	    padding: 0;
+    	margin: 0;
+
+	.container-panel{
+	  	display: flex;
+	    overflow: hidden;
+	    height: 105vh;
+	    margin-top: -150px;
+	    padding-top: 100px;
+	    position: relative;
+	    width: 100%;
+	    backface-visibility: hidden;
+	    will-change: overflow;
+		
+	    .panel_selected, .panel-project {
+		 	overflow: auto;
+	    	height: auto;
+		    padding: .5rem;
+		    -webkit-overflow-scrolling: touch;
+		    -ms-overflow-style: none;
+		}
+		.panel-project{
+			background: #166898;
+
+			nav{
+
+				ul{
+					margin-left: 0;
+					padding-left: 0;
+
+					li{
+						list-style: none;
+						padding: 10px;
+
+						&:hover{
+							background: #03446B;
+						}
+						a{						
+							text-decoration: none;
+							margin: 0;
+							display: block;
+							width: 100%;
+							height: 100%;
+							color: #d8d8d8;	
+						}
+					}
+				}
+			}
+		}
 	}
 }

@@ -1,11 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
-		<h1>{{project.pk}}</h1>
-		<h1>{{project.nombre}}</h1>
-		<h1>{{project.fechaCreacion}}</h1>
-		{% for layer in layers %}
-			<p>{{layer.pk}}</p>			
-			<p>{{layer.descripcion}}</p>
-			<a href="{{layer.image}}">{{layer.image}}</a>
-		{% endfor%}
+		<div class="row row-panel-project">
+			<div class="container-panel">
+				<div class="col-lg-2 panel-project">
+					<nav>
+						<ul>
+							<li><a href="{% url 'configProject' singleImage.proyecto.pk %}"><span class="glyphicon glyphicon-home"></span> {{singleImage.proyecto.nombre}}</a></li>
+							<li><a href=""><span class="glyphicon glyphicon-th-large"></span> Configurar capas</a></li>
+							<li><a href=""><span class="glyphicon glyphicon-scale"></span> Indicadores</a></li>
+							<li><a href=""><span class="glyphicon glyphicon-object-align-top"></span> Capas-Indicadores</a></li>
+							<li><a href=""><span class="glyphicon glyphicon-random"></span> Condición para indicadores</a></li>
+							<li><a href=""><span class="glyphicon glyphicon-cog"></span> Condición para capas</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="col-lg-10 panel_selected">
+					{% block project-options %}
+					{% endblock project-options %}
+				</div>
+			</div>
+		</div>
 {% endblock content %}

@@ -10,23 +10,31 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/new_project.css' %}">
 </head>
 <body>
-	<div class="container">
+	<div class="header-body">
 		<div class="row">
-			<div class="span12">			
-				<h1>Creación de dashboards personalizado</h1>
-				<nav class="navbar navbar-default">
-		  			<div class="container-fluid">
-					    <ul class="nav navbar-nav">
-					      <li><a href="{% url 'home' %}">Inicio</a></li>
-					      <li><a href="{% url 'new_project' %}">Proyecto</a></li>
-					    </ul>
-			  		</div>
-				</nav>
-				{% block content %}
-				{% endblock %}
-			</div>
+			<nav class="navbar navbar-default navbar-main">
+				 <div class="navbar-header">
+				    <button type="button" class="navbar-toggle" data-toggle="collapse"
+				            data-target=".navbar-ex1-collapse">
+				      <span class="sr-only">Desplegar navegación</span>
+				      <span class="icon-bar"></span>
+				      <span class="icon-bar"></span>
+				      <span class="icon-bar"></span>
+				    </button>
+				    <a class="navbar-brand" href="{% url 'home' %}">Creación de dashboards personalizado</a>
+			  	</div>
+				<div class="collapse navbar-collapse navbar-ex1-collapse">
+				    <ul class="nav navbar-nav">
+				      <li><a href="{% url 'home' %}">Inicio</a></li>
+				      <li><a href="{% url 'new_project' %}">Proyecto</a></li>
+				      <li></li>
+				    </ul>
+				</div>
+			</nav>
 		</div>
-	</div>
+	</div>	
+	{% block content %}
+	{% endblock %}
 	
 	<!-- VENDOR JAVASCRIPT -->
 

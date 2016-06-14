@@ -31,13 +31,13 @@ def proyecto_nuevo(request):
 def GetLayersByProject(request, idProject):
 	if(request.method == 'GET'):
 		imagesList = Image.objects.filter(proyecto__pk = idProject)
-		project = Proyecto.objects.get(pk = idProject)
+		singleImage = Image.objects.get(proyecto__pk = idProject)
 		layers =  Capa.objects.filter(image__in = imagesList)
 		dictionary = {
 			'layers': layers,
-			'project': project
+			'singleImage': singleImage
 		}
-		return render(request, "configProject.html", dictionary)
+		return render(request, "projectInfo.html", dictionary)
 
 @api_view(['GET','POST', 'PUT'])
 def GetAllProjectApi(request):
