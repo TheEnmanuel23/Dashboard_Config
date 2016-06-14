@@ -2,7 +2,7 @@
 {% block content %}
 		<div class="row row-panel-project">
 			<div class="container-panel">
-				<div class="col-lg-2 panel-project">
+				<div class="col-lg-3 panel-project">
 					<nav>
 						<ul>
 							<li><a href="{% url 'configProject' singleImage.proyecto.pk %}"><span class="glyphicon glyphicon-home"></span> {{singleImage.proyecto.nombre}}</a></li>
@@ -14,7 +14,7 @@
 						</ul>
 					</nav>
 				</div>
-				<div class="col-lg-10 panel_selected">
+				<div class="col-lg-9 panel_selected">
 					{% block project-options %}
 					{% endblock project-options %}
 				</div>

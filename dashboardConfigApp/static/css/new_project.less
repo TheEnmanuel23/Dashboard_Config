@@ -1,3 +1,6 @@
+body, html{
+	height: 100%;
+}
 .acciones{
 }
 
@@ -10,7 +13,6 @@
 	overflow: scroll;
 
 	svg{
-		
 
 		path{
 			stroke: white;
@@ -22,14 +24,7 @@
 				fill: rgba(64.3, 64.3, 64.3, 0.5); //rgb(139, 0, 0);
 			}
 		}
-		
 	}
-}
-
-.header-body{
-    position: relative;
-    z-index: 10;
-    height: 100px;
 }
 
 .navbar-main{
@@ -37,27 +32,18 @@
 }
 
 .row-panel-project{
-	    padding: 0;
-    	margin: 0;
+   	height: 100vh;
+  	display: flex;
 
 	.container-panel{
-	  	display: flex;
-	    overflow: hidden;
-	    height: 105vh;
-	    margin-top: -150px;
-	    padding-top: 100px;
-	    position: relative;
-	    width: 100%;
-	    backface-visibility: hidden;
-	    will-change: overflow;
+	 	flex: 1;
+  		display: flex;
 		
-	    .panel_selected, .panel-project {
-		 	overflow: auto;
-	    	height: auto;
-		    padding: .5rem;
-		    -webkit-overflow-scrolling: touch;
-		    -ms-overflow-style: none;
+		.panel_selected, .panel-project{
+			overflow-y: auto;
+  			padding: 1.5em;
 		}
+
 		.panel-project{
 			background: #166898;
 
