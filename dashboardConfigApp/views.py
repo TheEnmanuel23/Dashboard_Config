@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from dashboardConfigApp.forms import *
 from django.http import HttpResponseRedirect
 from .serializers import *
@@ -28,13 +28,16 @@ def proyecto_nuevo(request):
 	}
 	return render(request, 'new_project.html', data)
 
-@api_view(['GET','POST', 'PUT'])
-def LayersApi(request, idProject):
+def GetLayersByProject(request, idProject):
 	if(request.method == 'GET'):
 		imagesList = Image.objects.filter(proyecto__pk = idProject)
-		queryset =  Capa.objects.filter(image__in = imagesList)
-		serializer = CapaSerializer(queryset, many =True)
-		return Response(serializer.data)
+		project = Proyecto.objects.get(pk = idProject)
+		layers =  Capa.objects.filter(image__in = imagesList)
+		dictionary = {
+			'layers': layers,
+			'project': project
+		}
+		return render(request, "configProject.html", dictionary)
 
 @api_view(['GET','POST', 'PUT'])
 def GetAllProjectApi(request):
@@ -42,6 +45,16 @@ def GetAllProjectApi(request):
 		queryset = Proyecto.objects.all().order_by('-fechaCreacion')
 		serializer = ProjectSerializer(queryset, many =True)
 		return Response(serializer.data)
+
+
+def GetAllProject(request):
+	if(request.method == 'GET'):
+		queryset = Proyecto.objects.all().order_by('-fechaCreacion')
+		#projects = ProjectSerializer(queryset, many =True)
+		dictionary = {
+			'projects': queryset
+		}
+		return render(request, "index.html", dictionary)
 
 @api_view(['GET','POST', 'PUT'])
 def GetAllImageApi(request):

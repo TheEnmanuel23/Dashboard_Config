@@ -10,17 +10,16 @@
  				<th></th>
  			</thead>
  			<tbody id="allProject_table_tbody">
- 				
+ 				{% for project in projects %}
+ 				<tr>
+ 					<td>{{project.pk}}</td> 					
+ 					<td>{{project.nombre}}</td> 									
+ 					<td>{{project.fechaCreacion}}</td>
+ 					<td><a href="{% url 'configProject' project.pk %}"class="btn btn-info goToConfig" id="{{project.pk}}">Ir
+	 			a configuración <span class="glyphicon glyphicon-share-alt"></span></a></td>
+ 				</tr>
+ 				{% endfor %}
  			</tbody>
  		</table>
  	</div>
- 	<script type="text/template" id="allProjectTemplate">
- 		<tr>
- 			<td><%= pk %></td>
- 			<td><%= nombre %></td>
- 			<td><%= fechaCreacion %></td>
- 			<td><a  class="btn btn-info goToConfig" id="<%= pk %>">Ir
- 			a configuración <span class="glyphicon glyphicon-share-alt"></span></a></td>
- 		</tr>
- 	</script> 	
 {% endblock content %}

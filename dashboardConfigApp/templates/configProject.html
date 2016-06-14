@@ -1,4 +1,11 @@
 {% extends "base.html" %}
-{% block content %}	
-	{% load widget_tweaks %}
-{% endcontent %}
+{% block content %}
+		<h1>{{project.pk}}</h1>
+		<h1>{{project.nombre}}</h1>
+		<h1>{{project.fechaCreacion}}</h1>
+		{% for layer in layers %}
+			<p>{{layer.pk}}</p>			
+			<p>{{layer.descripcion}}</p>
+			<a href="{{layer.image}}">{{layer.image}}</a>
+		{% endfor%}
+{% endblock content %}

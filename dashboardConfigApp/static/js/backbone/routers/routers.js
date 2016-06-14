@@ -1,6 +1,6 @@
 ConfigDashboard.Routers.RoutersConfigDashboard = Backbone.Router.extend({
 	routes: {
-		"get_layers/project/:id": 'configProject'
+		"layeres/project/:id": 'configProject'
 	},
 	configProject: function(){
 		
