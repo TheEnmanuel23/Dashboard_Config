@@ -5,8 +5,8 @@
 				<div class="col-lg-3 panel-project">
 					<nav>
 						<ul>
-							<li><a href="{% url 'configProject' singleImage.proyecto.pk %}"><span class="glyphicon glyphicon-home"></span> {{singleImage.proyecto.nombre}}</a></li>
-							<li><a href=""><span class="glyphicon glyphicon-th-large"></span> Configurar capas</a></li>
+							<li><a href="{% url 'configProject' project.pk %}"><span class="glyphicon glyphicon-home"></span> {{project.nombre}}</a></li>
+							<li><a href="{% url 'layers' project.pk %}"><span class="glyphicon glyphicon-th-large"></span> Configurar capas</a></li>
 							<li><a href=""><span class="glyphicon glyphicon-scale"></span> Indicadores</a></li>
 							<li><a href=""><span class="glyphicon glyphicon-object-align-top"></span> Capas-Indicadores</a></li>
 							<li><a href=""><span class="glyphicon glyphicon-random"></span> Condición para indicadores</a></li>

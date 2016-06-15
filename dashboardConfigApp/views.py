@@ -9,6 +9,15 @@ from rest_framework.response import Response
 def home_view(request):
     return render(request, 'index.html')
 
+def GetAllProject(request):
+	if(request.method == 'GET'):
+		queryset = Proyecto.objects.all().order_by('-fechaCreacion')
+		#projects = ProjectSerializer(queryset, many =True)
+		dictionary = {
+			'projects': queryset
+		}
+		return render(request, "index.html", dictionary)
+
 def proyecto_nuevo(request):
 	if(request.method == 'POST'):
 		formProyecto = ProyectForm(request.POST)
@@ -28,18 +37,29 @@ def proyecto_nuevo(request):
 	}
 	return render(request, 'new_project.html', data)
 
-def GetLayersByProject(request, idProject):
+def GetInfoProject(request, idProject):
 	if(request.method == 'GET'):
-		imagesList = Image.objects.filter(proyecto__pk = idProject)
+		project = Proyecto.objects.get(pk = idProject)
 		singleImage = Image.objects.get(proyecto__pk = idProject)
-		onlyUrlImage = singleImage.imagen.url
-		layers =  Capa.objects.filter(image__in = imagesList)
 		dictionary = {
-			'layers': layers,
-			'singleImage': singleImage,
-			'onlyUrlImage': onlyUrlImage
+			'project': project,
+			'singleImage': singleImage
 		}
 		return render(request, "projectInfo.html", dictionary)
+
+def ConfigLayers(request, idProject):
+	if(request.method == 'GET'):
+		project = Proyecto.objects.get(pk = idProject)
+		imagesList = Image.objects.filter(proyecto__pk = idProject)
+		singleImage = Image.objects.get(proyecto__pk = idProject)
+		layers =  Capa.objects.filter(image__in = imagesList)
+		dictionary = {
+			'project': project,
+			'layers': layers,
+			'singleImage': singleImage,
+		}
+		return render(request, "layers.html", dictionary)
+
 
 @api_view(['GET','POST', 'PUT'])
 def GetAllProjectApi(request):
@@ -47,16 +67,6 @@ def GetAllProjectApi(request):
 		queryset = Proyecto.objects.all().order_by('-fechaCreacion')
 		serializer = ProjectSerializer(queryset, many =True)
 		return Response(serializer.data)
-
-
-def GetAllProject(request):
-	if(request.method == 'GET'):
-		queryset = Proyecto.objects.all().order_by('-fechaCreacion')
-		#projects = ProjectSerializer(queryset, many =True)
-		dictionary = {
-			'projects': queryset
-		}
-		return render(request, "index.html", dictionary)
 
 @api_view(['GET','POST', 'PUT'])
 def GetAllImageApi(request):
