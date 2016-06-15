@@ -1,7 +1,7 @@
 from django import forms
 from dashboardConfigApp.models import *
 
-class ProyectForm(forms.ModelForm):
+class ProjectForm(forms.ModelForm):
 	descripcion = forms.CharField(widget=forms.Textarea())
 	class Meta:
 		model = Proyecto
@@ -19,6 +19,12 @@ class ImageForm(forms.ModelForm):
 			'imagen',
 		]
 
+class LayerForm(forms.ModelForm):
+	class Meta:
+		model = Capa
+		fields = [
+			'descripcion'
+		]
 class CapaIndicadorForm(forms.ModelForm):
 	class Meta:
 		model = Condicion_Indicador

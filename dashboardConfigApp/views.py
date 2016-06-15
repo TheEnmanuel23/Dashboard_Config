@@ -4,7 +4,8 @@ from django.http import HttpResponseRedirect
 from .serializers import *
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-
+from django.forms.formsets import formset_factory
+from django.forms.models import inlineformset_factory
 # Create your views here.
 def home_view(request):
     return render(request, 'index.html')
@@ -20,7 +21,7 @@ def GetAllProject(request):
 
 def proyecto_nuevo(request):
 	if(request.method == 'POST'):
-		formProyecto = ProyectForm(request.POST)
+		formProyecto = ProjectForm(request.POST)
 		formImage = ImageForm(request.POST, request.FILES)
 
 		if formProyecto.is_valid() and formImage.is_valid():
@@ -30,7 +31,7 @@ def proyecto_nuevo(request):
 			image.save()
 			return HttpResponseRedirect("/")
 
-	formProyecto = ProyectForm()
+	formProyecto = ProjectForm()
 	formImage = ImageForm()
 	data = {
 		'formProyecto': formProyecto, 'formImage': formImage
@@ -47,16 +48,24 @@ def GetInfoProject(request, idProject):
 		}
 		return render(request, "projectInfo.html", dictionary)
 
-def ConfigLayers(request, idProject):
+def ConfigLayers(request, idProject=None):
+	if idProject:
+		imagesList = Image.objects.filter(proyecto__pk = idProject)
+		layers =  Capa.objects.filter(image__in = imagesList).values()
+	else:
+		layers = Capa()
+
+	LayerFormSet = formset_factory(LayerForm, extra = 0)
+
 	if(request.method == 'GET'):
 		project = Proyecto.objects.get(pk = idProject)
-		imagesList = Image.objects.filter(proyecto__pk = idProject)
-		singleImage = Image.objects.get(proyecto__pk = idProject)
-		layers =  Capa.objects.filter(image__in = imagesList)
+		singleImage = Image.objects.get(proyecto__pk = idProject)		
+		layerFormset = LayerFormSet(initial=layers)
 		dictionary = {
 			'project': project,
 			'layers': layers,
 			'singleImage': singleImage,
+			'layerFormset': layerFormset
 		}
 		return render(request, "layers.html", dictionary)
 
