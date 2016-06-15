@@ -1,5 +1,4 @@
 body, html{
-	height: 100%;
 }
 .acciones{
 }
@@ -41,9 +40,23 @@ body, html{
 		
 		.panel_selected, .panel-project{
 			overflow-y: auto;
-  			padding: 1.5em;
+  			padding: 1em;
 		}
+		.panel_selected{
+			.container-proyect-info{	
+				.panel{
+					width: 1000px;
 
+					.panel-body{
+						.well{
+							.proyect-detail{
+								margin-bottom: 10px;
+							}
+						}
+					}
+				}
+			}
+		}
 		.panel-project{
 			background: #166898;
 
@@ -74,3 +87,4 @@ body, html{
 		}
 	}
 }
+

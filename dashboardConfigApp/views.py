@@ -32,10 +32,12 @@ def GetLayersByProject(request, idProject):
 	if(request.method == 'GET'):
 		imagesList = Image.objects.filter(proyecto__pk = idProject)
 		singleImage = Image.objects.get(proyecto__pk = idProject)
+		onlyUrlImage = singleImage.imagen.url
 		layers =  Capa.objects.filter(image__in = imagesList)
 		dictionary = {
 			'layers': layers,
-			'singleImage': singleImage
+			'singleImage': singleImage,
+			'onlyUrlImage': onlyUrlImage
 		}
 		return render(request, "projectInfo.html", dictionary)
 

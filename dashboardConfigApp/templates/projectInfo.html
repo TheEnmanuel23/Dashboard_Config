@@ -1,7 +1,52 @@
 {% extends "configProject.html" %}
 {% block project-options %}
-	<h1>{{singleImage.proyecto.pk}}</h1>
-	<h1>{{singleImage.proyecto.nombre}}</h1>
-	<h1>{{singleImage.proyecto.fechaCreacion}}</h1>
-	<h1>{{singleImage.imagen}}</h1>
+	<div class="container-proyect-info">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+		    	<h3 class="panel-title">Datos del proyecto</h3>
+	  		</div>
+	  		<div class="panel-body">
+		   		<div class="well">
+			   		<div class="input-group proyect-detail">
+					  <span class="input-group-btn">
+					    <label class="btn btn-default">Nombre del proyecto</label>
+					  </span>
+					  <input type="text" class="form-control" value="{{singleImage.proyecto.nombre}}" disabled="">
+					</div>	
+
+					<div class="input-group proyect-detail">
+					  <span class="input-group-btn">
+					    <label class="btn btn-default">Fecha de creación:</label>
+					  </span>
+					  <input type="text" class="form-control" value="{{singleImage.proyecto.fechaCreacion}}" disabled="">
+					</div>
+		   		</div>
+
+	  		</div>
+  			<div class="panel-footer"><label>Código autogenerado:</label>  {{singleImage.proyecto.pk}}</div>
+		</div>
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+		    	<h3 class="panel-title">Datos de imagen</h3>
+	  		</div>
+	  		<div class="panel-body">
+		   		<div class="well">
+					<div class="input-group proyect-detail">
+					  <span class="input-group-btn">
+					    <label class="btn btn-default">Imagen</label>
+					  </span>
+					  <input type="text" class="form-control" value="{{singleImage.imagen}}" disabled="">
+					</div>
+					<div class="input-group proyect-detail">
+					  <span class="input-group-btn">
+					    <label class="btn btn-default">Descripción</label>
+					  </span>
+					  <input type="text" class="form-control" value="{{singleImage.descripcion}}" disabled="">
+					</div>
+		   		</div>
+	  		</div>
+  			<div class="panel-footer"><label>Url de imagen:</label>  <a href="{{singleImage.imagen.url}}" target="_blank">{{singleImage.imagen}}</a></div>
+		</div>
+	</div>
+	
 {% endblock project-options %}
