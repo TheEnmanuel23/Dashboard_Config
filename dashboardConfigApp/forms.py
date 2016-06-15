@@ -23,7 +23,8 @@ class LayerForm(forms.ModelForm):
 	class Meta:
 		model = Capa
 		fields = [
-			'descripcion'
+			'descripcion',
+			'idCapa',
 		]
 class CapaIndicadorForm(forms.ModelForm):
 	class Meta:

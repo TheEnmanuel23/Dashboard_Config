@@ -5,7 +5,7 @@ from .serializers import *
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.forms.formsets import formset_factory
-from django.forms.models import inlineformset_factory
+
 # Create your views here.
 def home_view(request):
     return render(request, 'index.html')

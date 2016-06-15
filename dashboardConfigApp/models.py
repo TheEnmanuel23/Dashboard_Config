@@ -19,6 +19,7 @@ class Image(models.Model):
 		return self.imagen.name
 
 class Capa(models.Model):
+	idCapa = models.CharField(max_length=50, default='')
 	descripcion = models.CharField(max_length=140)
 	image = models.ForeignKey(Image)
 
