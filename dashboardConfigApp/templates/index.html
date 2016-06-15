@@ -1,25 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
   	<div class="container-list-projects">
-  		<h2>Lista de proyectos</h2>
-		<table class="table table-striped allProject_table">
- 			<thead>
- 				<th>Id</th>
- 				<th>Nombre</th>
- 				<th>Fecha de creación</th>
- 				<th></th>
- 			</thead>
- 			<tbody id="allProject_table_tbody">
- 				{% for project in projects %}
- 				<tr>
- 					<td>{{project.pk}}</td> 					
- 					<td>{{project.nombre}}</td> 									
- 					<td>{{project.fechaCreacion}}</td>
- 					<td><a href="{% url 'configProject' project.pk %}"class="btn btn-info goToConfig" id="{{project.pk}}">Ir
-	 			a configuración <span class="glyphicon glyphicon-share-alt"></span></a></td>
- 				</tr>
- 				{% endfor %}
- 			</tbody>
- 		</table>
+  		<div class="panel panel-primary">
+ 	 		<div class="panel-heading">Proyectos creados</div>
+	 	 	<div class="panel-body">
+	 	 		<h2>Lista de proyectos</h2>
+				<table class="table table-striped allProject_table">
+		 			<thead>
+		 				<th>Id</th>
+		 				<th>Nombre</th>
+		 				<th>Fecha de creación</th>
+		 				<th></th>
+		 			</thead>
+		 			<tbody id="allProject_table_tbody">
+		 				{% for project in projects %}
+		 				<tr>
+		 					<td>{{project.pk}}</td> 					
+		 					<td>{{project.nombre}}</td> 									
+		 					<td>{{project.fechaCreacion}}</td>
+		 					<td><a href="{% url 'configProject' project.pk %}"class="btn btn-info goToConfig" id="{{project.pk}}">Ir
+			 			a configuración <span class="glyphicon glyphicon-share-alt"></span></a></td>
+		 				</tr>
+		 				{% endfor %}
+		 			</tbody>
+		 		</table>
+	 	 	</div>
+ 	 	</div>
  	</div>
 {% endblock content %}

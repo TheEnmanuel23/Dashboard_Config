@@ -3,16 +3,21 @@
 	{% load widget_tweaks %}
 	<form action="." method="POST" data-toggle="validator" enctype="multipart/form-data" role="form">
 		{% csrf_token %}
-		<div class="panel panel-default contentNewProject">
+		<div class="panel panel-primary contentNewProject">
 			<div class="panel-heading">
 		 		<strong id="nameNewProject">Nuevo proyecto</strong>
 	 		</div>
 	 		<div class="panel-body">
 	 			<div class="panel panel-default">
-		 	 		<div class="panel-heading">Nombre del proyecto</div>
+		 	 		<div class="panel-heading">Proyecto</div>
 			 	 	<div class="panel-body">
-				 		{{ formProyecto.nombre|add_class:"form-control"|attr:"required:required"|attr:"id:txtProjectName"}}
-			 	 	</div>	 		
+			 	 		<div class="well">
+			 	 			<h5>Nombre</h5>
+			 	 			{{ formProyecto.nombre|add_class:"form-control"|attr:"required:required"|attr:"id:txtProjectName"}}
+			 	 			<h5>Descripción</h5>
+			 	 			{{ formProyecto.descripcion|add_class:"form-control"|attr:"required:required"|attr:"id:txtDescripcionProyecto"|attr:"rows:2"}}
+			 	 		</div>			 		
+			 	 	</div> 	 		
 		 		</div>
 		 		<div class="panel panel-default">
 			 		<div class="panel-heading">

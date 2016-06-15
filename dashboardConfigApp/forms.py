@@ -2,10 +2,12 @@ from django import forms
 from dashboardConfigApp.models import *
 
 class ProyectForm(forms.ModelForm):
+	descripcion = forms.CharField(widget=forms.Textarea())
 	class Meta:
 		model = Proyecto
 		fields = [
-			'nombre'
+			'nombre',
+			'descripcion'
 		]
 
 class ImageForm(forms.ModelForm):	
