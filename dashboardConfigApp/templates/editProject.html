@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Editando proyecto: <strong>{{ editProject.nombre }}</strong></div>
+            <div class="panel-body">
+                <form  method="POST" data-toggle="validator" enctype="multipart/form-data" role="form">{% csrf_token %}
+                    {% csrf_token %}
+                    <div class="well">
+                        {{ form.as_p }}
+                    </div>
+                    <div class="acciones">
+                        <a  class="btn btn-default" href="{% url 'home' %}"><span class="glyphicon glyphicon-arrow-left"></span> Ir a inicio</a>
+                        <input type="submit" value="Guardar" class="btn btn-success" id="btnUpdate"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

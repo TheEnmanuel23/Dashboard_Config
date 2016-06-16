@@ -21,8 +21,10 @@ from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT,}),
-    url(r'^$', GetAllProject, name="home"),
+    url(r'^$', GetAllProjectView.as_view(), name="home"),
     url(r'^new_project/', proyecto_nuevo, name="new_project"),
     url(r'^project/(\d+)$', GetInfoProject, name='configProject'),
     url(r'^project/(\d+)/layers', ConfigLayers, name="layers"),
+    url(r'^editProject/(?P<pk>\d+)$', EditProject.as_view(), name='editProject'),
+    url(r'^deleteProject/(?P<pk>\d+)$', DeleteProject.as_view(), name='deleteProject'),
 ]

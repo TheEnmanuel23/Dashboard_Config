@@ -17,7 +17,7 @@
 					Configuración de capass
 				</div>
 				<div class="panel-body">
-					<form action="." method="POST" data-toggle="validator" enctype="multipart/form-data" role="form">
+					<form action="{% url 'home' %}" method="POST" data-toggle="validator" enctype="multipart/form-data" role="form">
 						{% csrf_token %}
 						{{layerFormset.management_form}}
 						<table class="table table-striped">

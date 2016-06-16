@@ -9,18 +9,23 @@
 		 			<thead>
 		 				<th>Id</th>
 		 				<th>Nombre</th>
+		 				<th>Descripción</th>
 		 				<th>Fecha de creación</th>
+		 				<th></th>
+		 				<th></th>
 		 				<th></th>
 		 			</thead>
 		 			<tbody id="allProject_table_tbody">
-		 				{% for project in projects %}
+		 				{% for project in listAllProject %}
 		 				<tr>
-		 					<td>{{project.pk}}</td> 					
-		 					<td>{{project.nombre}}</td> 									
+		 					<td>{{project.pk}}</td>
+		 					<td>{{project.nombre}}</td>
+		 					<td>{{project.descripcion}}</td>
 		 					<td>{{project.fechaCreacion}}</td>
 		 					<td><a href="{% url 'configProject' project.pk %}"class="btn btn-info goToConfig" id="{{project.pk}}">Ir
 			 			a configuración <span class="glyphicon glyphicon-share-alt"></span></a></td>
-		 				</tr>
+                             <td><a href="{% url 'editProject' project.pk %}" class="btn btn-warning" id="{{project.pk}}">Editar <span class="glyphicon glyphicon-edit"></span></a></td>
+		 				    <td><a href="{% url 'deleteProject' project.pk %}" class="btn btn-danger" id="{{project.pk}}">Eliminar <span class="glyphicon glyphicon-remove-sign"></span></a></td>
 		 				{% endfor %}
 		 			</tbody>
 		 		</table>
