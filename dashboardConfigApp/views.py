@@ -7,13 +7,11 @@ from rest_framework.response import Response
 from django.forms.formsets import formset_factory
 from django.forms.models import inlineformset_factory
 from django.views import generic
-from django.views.generic.edit import FormView, UpdateView, DeleteView
+from django.views.generic.edit import FormView, UpdateView, DeleteView, CreateView
 from django.core.urlresolvers import reverse_lazy
 # Create your views here.
-def home_view(request):
-    return render(request, 'index.html')
 
-class GetAllProjectView(generic.ListView):
+class GetAllProject(generic.ListView):
 	template_name = 'index.html'
 	context_object_name ='listAllProject'
 	model = Proyecto
@@ -35,40 +33,10 @@ class DeleteProject(DeleteView):
 	context_object_name = 'deleteProject'
 	success_url = reverse_lazy('home')
 
-class addProject(FormView):
-	template_name = 'new_project.html'
-	context_object_name = 'newProject'
-	form_class= ProjectForm
-
-	def post(self, request):
-		formProyecto = ProjectForm(request.POST)
-		formImage = ImageForm(request.POST, request.FILES)
-
-		if formProyecto.is_valid() and formImage.is_valid():
-			proyecto = formProyecto.save()
-			image = formImage.save(commit = False)
-			image.proyecto = proyecto
-			image.save()
-			return HttpResponseRedirect("/")
-
-def proyecto_nuevo(request):
-	if(request.method == 'POST'):
-		formProyecto = ProjectForm(request.POST)
-		formImage = ImageForm(request.POST, request.FILES)
-
-		if formProyecto.is_valid() and formImage.is_valid():
-			proyecto = formProyecto.save()
-			image = formImage.save(commit = False)
-			image.proyecto = proyecto
-			image.save()
-			return HttpResponseRedirect("/")
-
-	formProyecto = ProjectForm()
-	formImage = ImageForm()
-	data = {
-		'formProyecto': formProyecto, 'formImage': formImage
-	}
-	return render(request, 'new_project.html', data)
+class CreateNewProject(CreateView):
+	form_class = NewProjectForm
+	success_url = reverse_lazy('home')
+	template_name ='new_project.html'
 
 def GetInfoProject(request, idProject):
 	if(request.method == 'GET'):

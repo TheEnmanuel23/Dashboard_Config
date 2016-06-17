@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dashboardConfigApp',
     'rest_framework',
-    'widget_tweaks'
+    'widget_tweaks',
+    'betterforms',
 ]
 
 MIDDLEWARE_CLASSES = [

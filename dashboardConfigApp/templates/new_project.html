@@ -2,62 +2,62 @@
 {% block content %}
 	{% load widget_tweaks %}
 	<form action="." method="POST" data-toggle="validator" enctype="multipart/form-data" role="form">
-		{% csrf_token %}
-		<div class="panel panel-primary contentNewProject">
-			<div class="panel-heading">
-		 		<strong id="nameNewProject">Nuevo proyecto</strong>
-	 		</div>
-	 		<div class="panel-body">
-	 			<div class="panel panel-default">
-		 	 		<div class="panel-heading">Proyecto</div>
-			 	 	<div class="panel-body">
-			 	 		<div class="well">
-			 	 			<h5>Nombre</h5>
-			 	 			{{ formProyecto.nombre|add_class:"form-control"|attr:"required:required"|attr:"id:txtProjectName"}}
-			 	 			<h5>Descripción</h5>
-			 	 			{{ formProyecto.descripcion|add_class:"form-control"|attr:"required:required"|attr:"id:txtDescripcionProyecto"|attr:"rows:2"}}
-			 	 		</div>			 		
-			 	 	</div> 	 		
-		 		</div>
-		 		<div class="panel panel-default">
-			 		<div class="panel-heading">
-			 			Configuración de imagen
-			 		</div>
-		 			<div class="panel-body">
-			 			<div class="row">
-			 				<div class="col-lg-5">
-			 					<div class="panel panel-default"> 				
-					 				<div class="panel-body">
-					 					{{ formImage.imagen|add_class:"filestyle"|attr:"data-placeholder:No hay imagen"|attr:"data-buttonName:btn-primary"|attr:"required:required"|attr:" data-buttonText:Buscar imagen"|attr:"id:btnOpenFile" }}
-					 				</div>
-			 					</div>
-					 			<div class="panel panel-default">
-					 				<div class="panel-body">	 					
-							 			<label>Descripción de la imagen</label>
-								 		{{ formImage.descripcion|add_class:"form-control"|attr:"rows:5"|attr:"required:required" }}
-					 				</div>
-					 			</div>
-			 				</div>
-			 				<div class="col-lg-7">
-			 					<div class="panel panel-default">
-				 					<div class="panel-heading">
-							 			Previsualización de la imagen
-							 		</div>
-					 				<div class="panel-body">
-					 					<div class="containerImage" id="containerImage">
-					 				
-			 							</div>
-					 				</div>
-					 			</div>
-			 				</div>
-			 			</div>		 			
- 					</div>
- 				</div>
- 				<div class="acciones">
- 					<a  class="btn btn-default" href="{% url 'home' %}"><span class="glyphicon glyphicon-arrow-left"></span> Ir a inicio</a>
-			 		<input type="submit" value="Guardar" class="btn btn-success" id="btnSave"/>
- 				</div>
- 			</div>
- 		</div>
+        {% csrf_token %}
+        <div class="panel panel-primary contentNewProject">
+            <div class="panel-heading">
+                <strong id="nameNewProject">Nuevo proyecto</strong>
+            </div>
+            <div class="panel-body">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Proyecto</div>
+                    <div class="panel-body">
+                        <div class="well">
+                            <h5>Nombre</h5>
+                            {{ form.project.nombre|add_class:"form-control"|attr:"required:required"|attr:"id:txtProjectName"}}
+                            <h5>Descripción</h5>
+                            {{ form.project.descripcion|add_class:"form-control"|attr:"required:required"|attr:"id:txtDescripcionProyecto"|attr:"rows:2"}}
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Configuración de imagen
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        {{ form.image.imagen|add_class:"filestyle"|attr:"data-placeholder:No hay imagen"|attr:"data-buttonName:btn-primary"|attr:"required:required"|attr:" data-buttonText:Buscar imagen"|attr:"id:btnOpenFile" }}
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <label>Descripción de la imagen</label>
+                                        {{ form.image.descripcion|add_class:"form-control"|attr:"rows:5"|attr:"required:required" }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        Previsualización de la imagen
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="containerImage" id="containerImage">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="acciones">
+                    <a  class="btn btn-default" href="{% url 'home' %}"><span class="glyphicon glyphicon-arrow-left"></span> Ir a inicio</a>
+                    <input type="submit" value="Guardar" class="btn btn-success" id="btnSave"/>
+                </div>
+            </div>
+        </div>
 	</form>
 {% endblock content %}
