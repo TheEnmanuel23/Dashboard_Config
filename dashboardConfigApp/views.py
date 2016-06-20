@@ -37,7 +37,7 @@ class DeleteProject(DeleteView):
 class CreateNewProject(CreateView):
 	form_class = NewProjectForm
 	success_url = reverse_lazy('home')
-	template_name = 'project/new_project.html'
+	template_name ='project/new_project.html'
 
 def GetInfoProject(request, idProject):
 	if(request.method == 'GET'):

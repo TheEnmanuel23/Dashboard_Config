@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 	{% load widget_tweaks %}
-	<form action="../" method="POST" data-toggle="validator" enctype="multipart/form-data" role="form">
+	<form action="." method="POST" data-toggle="validator" enctype="multipart/form-data" role="form">
         {% csrf_token %}
         <div class="panel panel-primary contentNewProject">
             <div class="panel-heading">

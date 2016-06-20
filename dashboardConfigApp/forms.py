@@ -24,7 +24,8 @@ class ImageForm(forms.ModelForm):
 class NewProjectForm(MultiModelForm):
 	form_classes = {
 		'project': ProjectForm,
-		'image': ImageForm	}
+		'image': ImageForm
+	}
 
 	def save(self, commit=True):
 		objects =  super(NewProjectForm, self).save(commit=False)
