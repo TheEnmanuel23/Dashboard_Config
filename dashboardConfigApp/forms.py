@@ -24,8 +24,7 @@ class ImageForm(forms.ModelForm):
 class NewProjectForm(MultiModelForm):
 	form_classes = {
 		'project': ProjectForm,
-		'image': ImageForm
-	}
+		'image': ImageForm	}
 
 	def save(self, commit=True):
 		objects =  super(NewProjectForm, self).save(commit=False)
@@ -45,8 +44,7 @@ class LayerForm(forms.ModelForm):
 			'idCapa',
 		]
 
-
-LayerFormSet = inlineformset_factory(Image, Capa, extra=0, form = LayerForm)
+LayerFormSet = inlineformset_factory(Image, Capa, extra=0, form = LayerForm, can_delete=False)
 class CapaIndicadorForm(forms.ModelForm):
 	class Meta:
 		model = Condicion_Indicador

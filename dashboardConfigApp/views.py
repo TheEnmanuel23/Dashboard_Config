@@ -25,8 +25,9 @@ class EditProject(UpdateView):
 	success_url = reverse_lazy('home')
 	fields = [
 		'nombre',
-		'descripcion'
+		'descripcion',
 	]
+
 class DeleteProject(DeleteView):
 	model = Proyecto
 	template_name = 'project/deleteProject.html'
@@ -59,12 +60,9 @@ class GetAndUpdateLayers(UpdateView):
 	def get_context_data(self, **kwargs):
 		context = super(GetAndUpdateLayers, self).get_context_data(**kwargs)
 		project = Proyecto.objects.get(pk = self.object.proyecto.pk)
-		if(self.request.POST):
-			context['LayerFormSet'] = LayerFormSet(self.request.POST, instance=self.object)
-		else:
-			context['LayerFormSet'] = LayerFormSet(instance=self.object)
-			context['singleImage'] = self.object
-			context['project'] = project
+		context['LayerFormSet'] = LayerFormSet(instance=self.object)
+		context['singleImage'] = self.object
+		context['project'] = project
 		return context
 
 	def post(self, request, *args, **kwargs):

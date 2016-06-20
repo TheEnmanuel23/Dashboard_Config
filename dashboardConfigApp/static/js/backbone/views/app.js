@@ -1,7 +1,8 @@
 ConfigDashboard.Views.App = Backbone.View.extend({
 	el: $('body'),
 	events: {
-		'change #btnOpenFile': 'loadImageIntoContainer'
+		'change #btnOpenFile': 'loadImageIntoContainer',
+		'click .add-book': 'addLayer',
 	},
 	initialize: function($el){
 		this.$el = $el;
@@ -15,5 +16,13 @@ ConfigDashboard.Views.App = Backbone.View.extend({
 			   	workSpace.append(data);
 			});
 		}
+	},
+	addLayer: function(ev){
+	 	ev.preventDefault();
+		var count = $('#layersForm tbody').children().length;
+		var template = _.template($('#layer-template').html());
+		var html = template({ id : count });
+		$('#layersForm tbody').append(html);
+		$('#id_capa_set-TOTAL_FORMS').attr('value', count+1);
 	}
 });

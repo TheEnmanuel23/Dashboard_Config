@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+	{% load widget_tweaks %}
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Editando proyecto: <strong>{{ editProject.nombre }}</strong></div>
+            <div class="panel-body">
+                <form  method="POST" data-toggle="validator" enctype="multipart/form-data" role="form">{% csrf_token %}
+                    {% csrf_token %}
+                    <div class="well">
+                         <h5>Nombre</h5>
+                        {{ form.nombre|add_class:"form-control"|attr:"required:required"|attr:"id:txtProjectName"}}
+                        <h5>Descripción</h5>
+                        {{ form.descripcion|add_class:"form-control"|attr:"required:required"|attr:"id:txtDescripcionProyecto"|attr:"rows:2"}}
+                    </div>
+                    <div class="acciones">
+                        <a  class="btn btn-default" href="{% url 'home' %}"><span class="glyphicon glyphicon-arrow-left"></span> Ir a inicio</a>
+                        <input type="submit" value="Guardar" class="btn btn-success" id="btnUpdate"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>    
+{% endblock content %}
