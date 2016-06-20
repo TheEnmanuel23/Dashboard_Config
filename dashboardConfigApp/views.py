@@ -20,7 +20,7 @@ class GetAllProject(generic.ListView):
 
 class EditProject(UpdateView):
 	model = Proyecto
-	template_name = 'editProject.html'
+	template_name = 'project/editProject.html'
 	context_object_name = 'editProject'
 	success_url = reverse_lazy('home')
 	fields = [
@@ -29,14 +29,14 @@ class EditProject(UpdateView):
 	]
 class DeleteProject(DeleteView):
 	model = Proyecto
-	template_name = 'deleteProject.html'
+	template_name = 'project/deleteProject.html'
 	context_object_name = 'deleteProject'
 	success_url = reverse_lazy('home')
 
 class CreateNewProject(CreateView):
 	form_class = NewProjectForm
 	success_url = reverse_lazy('home')
-	template_name ='new_project.html'
+	template_name = 'project/new_project.html'
 
 def GetInfoProject(request, idProject):
 	if(request.method == 'GET'):
@@ -46,52 +46,34 @@ def GetInfoProject(request, idProject):
 			'project': project,
 			'singleImage': singleImage
 		}
-		return render(request, "projectInfo.html", dictionary)
+		return render(request, "project/projectInfo.html", dictionary)
 
-def ConfigLayers(request, idProject=None):
-	if idProject:
-		imagesList = Image.objects.filter(proyecto__pk = idProject)
-		layers =  Capa.objects.filter(image__in = imagesList).values()
-		singleImage = Image.objects.get(proyecto__pk = idProject)
-	else:
-		layers = Capa()
-		singleImage = Image()
+class GetAndUpdateLayers(UpdateView):
+	model = Image
+	template_name = 'layers/getAndEditLayers.html'
+	success_url = reverse_lazy('home')
+	fields = [
+		'imagen',
+		'descripcion'
+	]
+	def get_context_data(self, **kwargs):
+		context = super(GetAndUpdateLayers, self).get_context_data(**kwargs)
+		project = Proyecto.objects.get(pk = self.object.proyecto.pk)
+		if(self.request.POST):
+			context['LayerFormSet'] = LayerFormSet(self.request.POST, instance=self.object)
+		else:
+			context['LayerFormSet'] = LayerFormSet(instance=self.object)
+			context['singleImage'] = self.object
+			context['project'] = project
+		return context
 
-	LayerFormSet = inlineformset_factory(Image, Capa,fields=('idCapa', 'descripcion'), extra = 0)
+	def post(self, request, *args, **kwargs):
+		self.object = self.get_object()
+		layerFormSet = LayerFormSet(request.POST, instance = self.object)
+		if(layerFormSet.is_valid()):
+			return self.form_valid(layerFormSet)
 
-	if(request.method == 'GET'):
-		project = Proyecto.objects.get(pk = idProject)
-		layerFormset = LayerFormSet(instance=singleImage)
-	elif(request.method == 'POST'):
-		layerFormset = LayerFormSet(request.POST, instance=singleImage)
-		if(layerFormset.is_valid()):
-			layerFormset.save()
-			return HttpResponseRedirect("home")
-	dictionary = {
-			'project': project,
-			'layers': layers,
-			'singleImage': singleImage,
-			'layerFormset': layerFormset
-		}
-	return render(request, "layers.html", dictionary)
-
-@api_view(['GET','POST', 'PUT'])
-def GetAllProjectApi(request):
-	if(request.method == 'GET'):
-		queryset = Proyecto.objects.all().order_by('-fechaCreacion')
-		serializer = ProjectSerializer(queryset, many =True)
-		return Response(serializer.data)
-
-@api_view(['GET','POST', 'PUT'])
-def GetAllImageApi(request):
-	if(request.method == 'GET'):
-		queryset = Image.objects.all()
-		serializer = ImageSerializer(queryset, many =True)
-		return Response(serializer.data)
-
-@api_view(['GET','POST', 'PUT'])
-def GetAllImageApiByProject(request, idProject):
-	if(request.method == 'GET'):
-		queryset = Image.objects.all()
-		serializer = ImageSerializer(queryset, many =True)
-		return Response(serializer.data)
+	def form_valid(self, layerFormSet):
+		layerFormSet.instance = self.object
+		layerFormSet.save()
+		return HttpResponseRedirect(self.get_success_url())

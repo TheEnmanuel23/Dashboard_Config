@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^$', GetAllProject.as_view(), name="home"),
     url(r'^new_project/', CreateNewProject.as_view(), name="new_project"),
     url(r'^project/(\d+)$', GetInfoProject, name='configProject'),
-    url(r'^project/(\d+)/layers', ConfigLayers, name="layers"),
     url(r'^editProject/(?P<pk>\d+)$', EditProject.as_view(), name='editProject'),
     url(r'^deleteProject/(?P<pk>\d+)$', DeleteProject.as_view(), name='deleteProject'),
+    url(r'^project/(\d+)/image/(?P<pk>\d+)/layers/', GetAndUpdateLayers.as_view(), name='get_update_layers'),
 ]

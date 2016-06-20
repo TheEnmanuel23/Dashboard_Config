@@ -37,8 +37,6 @@ class NewProjectForm(MultiModelForm):
 			image.save()
 			return objects
 
-ImageFormSet = inlineformset_factory(Proyecto, Image, extra=0, form = ImageForm)
-
 class LayerForm(forms.ModelForm):
 	class Meta:
 		model = Capa
@@ -46,6 +44,9 @@ class LayerForm(forms.ModelForm):
 			'descripcion',
 			'idCapa',
 		]
+
+
+LayerFormSet = inlineformset_factory(Image, Capa, extra=0, form = LayerForm)
 class CapaIndicadorForm(forms.ModelForm):
 	class Meta:
 		model = Condicion_Indicador

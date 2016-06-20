@@ -1,0 +1,45 @@
+{% extends 'layers/layers.html' %}
+{% block contentLayers %}
+
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Imagen
+                </div>
+                <div class="panel-body">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Configuración de capas
+                </div>
+                <div class="panel-body">
+                    <form action="." method="POST" data-toggle="validator" enctype="multipart/form-data" role="form">
+                        {{ LayerFormSet.management_form }}
+	                    {% load widget_tweaks %}
+                        {% csrf_token %}
+                        <table class="table table-striped">
+                            <thead>
+                                <th>Id</th>
+                                <th>Descripción</th>
+                            </thead>
+                            <tbody>
+                                {% for formset in LayerFormSet %}
+                                    <tr>
+                                        {{ formset }}
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <div class="acciones">
+                            <input type="submit" value="Guardar" class="btn btn-success" id="btnSave"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock contentLayers %}
