@@ -8,6 +8,8 @@
                     Imagen
                 </div>
                 <div class="panel-body">
+                    <div class="containerImageSaved" id = "containerImageSaved">
+                    </div>
                 </div>
             </div>
         </div>
@@ -25,7 +27,6 @@
                             <thead>
                                 <th>Codigo</th>
                                 <th>Descripción</th>
-                                <th></th>
                             </thead>
                             <tbody>
                                 {% for formset in LayerFormSet.forms %}
@@ -43,13 +44,12 @@
                                       </tr>
                                 {% endfor %}
                             </tbody>
-                        <p>Total: {{ LayerFormSet.TOTAL_FORMS }}</p>
                         </table>
                         <div class="row">
 
                         </div>
                         <div class="acciones">
-                            <a href="#" class="btn btn-info add-book">Add Book</a>
+                            <a href="#" class="btn btn-info add-book"><span class="glyphicon glyphicon-plus"></span> Agregar</a>
                             <input type="submit" value="Guardar" class="btn btn-success" id="btnSave"/>
                         </div>
                     </form>

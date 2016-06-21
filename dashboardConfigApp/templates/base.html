@@ -47,6 +47,7 @@
 	<script src="{% static 'js/vendor/snap.svg-min.js' %}"></script>
 
 
+
 	<!-- CUSTOM JAVASCRIPT 
 	<!-- <script src="{%static '' %}"></script> -->
 	<script src="{%static 'js/init.js' %}"></script>
@@ -62,5 +63,15 @@
 	<script src="{% static 'js/mainCreateProject.js' %}"></script>
 	<script src="{% static 'js/mainAllProject.js' %}"></script>
 	<script src="{% static 'js/mainConfigProject.js' %}"></script>
+
+    <script>
+        $(function(){
+            var workSpace = Snap("#containerImageSaved");
+            var url = '{{ singleImage.imagen.url }}'
+            Snap.load(url, function ( data ) {
+                workSpace.append(data);
+            });
+        })
+    </script>
 </body>
 </html>

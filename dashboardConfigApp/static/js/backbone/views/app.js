@@ -2,7 +2,7 @@ ConfigDashboard.Views.App = Backbone.View.extend({
 	el: $('body'),
 	events: {
 		'change #btnOpenFile': 'loadImageIntoContainer',
-		'click .add-book': 'addLayer',
+		 'click .add-book': 'addLayer',
 	},
 	initialize: function($el){
 		this.$el = $el;

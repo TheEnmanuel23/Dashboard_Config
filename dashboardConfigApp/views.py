@@ -1,13 +1,9 @@
-from django.shortcuts import render, redirect, get_object_or_404, render_to_response
+from django.shortcuts import render
 from dashboardConfigApp.forms import *
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect
 from .serializers import *
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from django.forms.formsets import formset_factory
-from django.forms.models import inlineformset_factory
 from django.views import generic
-from django.views.generic.edit import FormView, UpdateView, DeleteView, CreateView
+from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.core.urlresolvers import reverse_lazy
 # Create your views here.
 
