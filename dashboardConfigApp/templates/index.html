@@ -34,7 +34,7 @@
                         <ul class="pagination">
                             {% if is_paginated %}
                                 <li>
-                                    <a href="?page=1">Primera página</a>
+                                    <a href="?page=1">Ir al inicio</a>
                                 </li>
                                 {% for pageNum in paginator.page_range %}
                                     {% ifequal pageNum page_obj.number %}
@@ -44,7 +44,7 @@
                                     {% endifequal %}
                                 {% endfor %}
                                 <li>
-                                    <a href="?page={{ paginator.num_pages }}">Última página</a>
+                                    <a href="?page={{ paginator.num_pages }}">Ir al final</a>
                                 </li>
                             {% endif %}
                         </ul>
