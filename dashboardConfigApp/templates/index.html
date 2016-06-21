@@ -29,6 +29,44 @@
 		 				{% endfor %}
 		 			</tbody>
 		 		</table>
+                <div class="row">
+                    <nav class="text-left col-xs-6">
+                        <ul class="pagination">
+                            {% if is_paginated %}
+                                <li>
+                                    <a href="?page=1">Primera página</a>
+                                </li>
+                                {% for pageNum in paginator.page_range %}
+                                    {% ifequal pageNum page_obj.number %}
+                                        <li class="active"><a href="?page={{ pageNum }}">{{ pageNum }}</a></li>
+                                        {% else %}
+                                        <li><a href="?page={{ pageNum }}">{{ pageNum }}</a></li>
+                                    {% endifequal %}
+                                {% endfor %}
+                                <li>
+                                    <a href="?page={{ paginator.num_pages }}">Última página</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                    <nav class="text-right col-xs-6">
+                        <ul class="pagination">
+                            {% if  is_paginated %}
+                                {% if page_obj.has_previous %}
+                                    <li>
+                                        <a href="?page={{ page_obj.previous_page_number }}"><span class="glyphicon glyphicon-chevron-left"></span> Página anterior</a>
+                                    </li>
+                                {% endif %}
+                                 {% if page_obj.has_next %}
+                                    <li>
+                                        <a href="?page={{ page_obj.next_page_number }}">Página siguiente <span class="glyphicon glyphicon-chevron-right"></span></a>
+                                    </li>
+                                {% endif %}
+                                <p>Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</p>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
 	 	 	</div>
  	 	</div>
  	</div>

@@ -11,8 +11,10 @@ class GetAllProject(generic.ListView):
 	template_name = 'index.html'
 	context_object_name ='listAllProject'
 	model = Proyecto
+	paginate_by = 2
+
 	def get_queryset(self):
-		return Proyecto.objects.all().order_by('-fechaCreacion')
+		return self.model.objects.all().order_by('-fechaCreacion')
 
 class EditProject(UpdateView):
 	model = Proyecto
