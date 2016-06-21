@@ -24,7 +24,7 @@ class Capa(models.Model):
 	image = models.ForeignKey(Image)
 
 	def __str__(self):
-		return self.descripcion
+		return self.idCapa + ' - ' +  self.descripcion
 
 class TipoCampo(models.Model):
 	descripcion = models.CharField(max_length=10)

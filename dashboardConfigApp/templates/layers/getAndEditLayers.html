@@ -8,51 +8,72 @@
                     Imagen
                 </div>
                 <div class="panel-body">
+                    <div class="panel panel-default">
+                         <div class="panel-body">
+                             <form action="" class="form-inline" id="form-layer-selected">
+                                   <div class="form-group">
+                                       <strong>Código:</strong>
+                                        <input type="text" disabled class="form-control" id="txtCodigoCapa"
+                                                 placeholder="código" required="required" />
+                                  </div>
+                                   <div class="form-group">
+                                       <strong>Descripción:</strong>
+                                      <input type="text" class="form-control" id="txtDescripcionCapa"
+                                                 placeholder="descripción" required>
+                                  </div>
+                                 <input type="submit" class="btn btn-default add-layer" value="Agregar">
+                             </form>
+                          </div>
+                    </div>
                     <div class="containerImageSaved" id = "containerImageSaved">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    Configuración de capas
-                </div>
-                <div class="panel-body">
-                    <form action="." method="POST" data-toggle="validator" enctype="multipart/form-data" role="form" id="layersForm">
-                        {{ LayerFormSet.management_form }}
-	                    {% load widget_tweaks %}
-                        {% csrf_token %}
-                        <table class = 'table'>
-                            <thead>
-                                <th>Codigo</th>
-                                <th>Descripción</th>
-                            </thead>
-                            <tbody>
-                                {% for formset in LayerFormSet.forms %}
-                                      <tr>
-                                            <td>
-                                                {% for formHidden in formset.hidden_fields %}
-                                                    {{ formHidden }}
-                                                {% endfor %}
-                                                {% if formset.instance.pk %}
-                                                    {{ formset.DELETE }}
-                                                {% endif %}
-                                                {{ formset.idCapa|add_class:"form-control"|attr:"required:required" }}
-                                            </td>
-                                            <td>{{ formset.descripcion|add_class:"form-control"|attr:"required:required" }}</td>
-                                      </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                        <div class="row">
 
-                        </div>
-                        <div class="acciones">
-                            <a href="#" class="btn btn-info add-book"><span class="glyphicon glyphicon-plus"></span> Agregar</a>
-                            <input type="submit" value="Guardar" class="btn btn-success" id="btnSave"/>
-                        </div>
-                    </form>
+        <div class="col-lg-4">
+            <div class="row">
+            </div>
+            <div class="row">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        Configuración de capas
+                    </div>
+                    <div class="panel-body">
+                        <form action="." method="POST" data-toggle="validator" enctype="multipart/form-data" role="form" id="layersForm">
+                            {{ LayerFormSet.management_form }}
+                            {% load widget_tweaks %}
+                            {% csrf_token %}
+                            <table class = 'table'>
+                                <thead>
+                                    <th>Código</th>
+                                    <th>Descripción</th>
+                                </thead>
+                                <tbody>
+                                    {% for formset in LayerFormSet.forms %}
+                                          <tr>
+                                                <td>
+                                                    {% for formHidden in formset.hidden_fields %}
+                                                        {{ formHidden }}
+                                                    {% endfor %}
+                                                    {% if formset.instance.pk %}
+                                                        {{ formset.DELETE }}
+                                                    {% endif %}
+                                                    {{ formset.idCapa|add_class:"form-control"|attr:"required:required"}}
+                                                </td>
+                                                <td>{{ formset.descripcion|add_class:"form-control"|attr:"required:required" }}</td>
+                                          </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            <div class="row">
+
+                            </div>
+                            <div class="acciones">
+                                <input type="submit" value="Guardar" class="btn btn-success" id="btnSave"/>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -62,10 +83,10 @@
             <td>
                 <input id="id_capa_set-<%= id %>-id" class="form-control" name="capa_set-<%= id %>-id" type="hidden" >
                 <input id="id_capa_set-<%= id %>-image" class="form-control" name="capa_set-<%= id %>-image" type="hidden">
-                <input id="id_capa_set-<%= id %>-idCapa" maxlength="50"class="form-control" name="capa_set-<%= id %>-idCapa" type="text" >
+                <input id="id_capa_set-<%= id %>-idCapa" maxlength="50"class="form-control" name="capa_set-<%= id %>-idCapa" type="text" value="<%= idCapa %>">
             </td>
             <td>
-                <input id="id_capa_set-<%= id %>-descripcion" class="form-control" maxlength="140" name="capa_set-<%= id %>-descripcion" type="text">
+                <input id="id_capa_set-<%= id %>-descripcion" class="form-control" maxlength="140" name="capa_set-<%= id %>-descripcion" type="text" value="<%= descripcion %>">
             </td>
           </tr>
     </script>
