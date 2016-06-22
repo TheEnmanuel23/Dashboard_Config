@@ -1,5 +1,11 @@
 {% extends "project/configProject.html" %}
 {% block project-options %}
+    <nav>
+        <ol class="breadcrumb">
+            <li class="active"><a href="{% url 'get_update_layers' project.pk  singleImage.pk %}">Ver capas</a></li>
+           <li><a href="">Agregar capas</a></li>
+        </ol>
+    </nav>
     {% block contentLayers %}
 
     {% endblock contentLayers %}

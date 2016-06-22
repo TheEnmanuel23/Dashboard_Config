@@ -11,7 +11,7 @@ ConfigDashboard.Views.LayersView = Backbone.View.extend({
 		jQuery.validator.messages.required = ""
 		if($('#form-layer-selected').valid()) {
             if ($('#form-layer-selected').valid()) {
-                var count = $('#layersForm tbody').children().length;
+                var count = parseInt($('#layersForm tbody').children().length);
                 var idCapa = $('#txtCodigoCapa').val()
                 var descripcion = $('#txtDescripcionCapa').val()
                 this.model.add({
