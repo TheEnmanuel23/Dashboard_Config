@@ -3,13 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="62ca973c-a83a-477e-96b3-d9b3be0e04bd" name="Default" comment="#">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/models.py" afterPath="$PROJECT_DIR$/dashboardConfigApp/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/static/css/new_project.css" afterPath="$PROJECT_DIR$/dashboardConfigApp/static/css/new_project.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/static/css/new_project.less" afterPath="$PROJECT_DIR$/dashboardConfigApp/static/css/new_project.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/models/ConfigDashboardModels.js" afterPath="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/models/ConfigDashboardModels.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/app.js" afterPath="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/layersView.js" afterPath="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/layersView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/static/js/main.js" afterPath="$PROJECT_DIR$/dashboardConfigApp/static/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/static/js/mainCreateProject.js" afterPath="$PROJECT_DIR$/dashboardConfigApp/static/js/mainCreateProject.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/templates/base.html" afterPath="$PROJECT_DIR$/dashboardConfigApp/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/templates/layers/getAndEditLayers.html" afterPath="$PROJECT_DIR$/dashboardConfigApp/templates/layers/getAndEditLayers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/templates/project/configProject.html" afterPath="$PROJECT_DIR$/dashboardConfigApp/templates/project/configProject.html" />
     </list>
     <ignored path="Dashboard configuration proyect.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/dashboardConfigApp/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+              <caret line="42" column="59" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="59" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -46,73 +46,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboardConfigApp/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getAndEditLayers.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="getAndEditLayers.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/layers/getAndEditLayers.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.800659">
-              <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="85" column="124" selection-start-line="85" selection-start-column="124" selection-end-line="85" selection-end-column="124" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboardConfigApp/models.py">
+      <file leaf-file-name="projectView.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/projectView.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="configProject.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/project/configProject.html">
+      <file leaf-file-name="layersView.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/layersView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.05930807">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mainAllProject.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/mainAllProject.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_project.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/css/new_project.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.148148">
-              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/app.js">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+              <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -142,18 +130,22 @@
         <option value="$PROJECT_DIR$/dashboardConfigApp/templates/layers/addLayer" />
         <option value="$PROJECT_DIR$/dashboardConfig/urls.py" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/templates/layers/layers.html" />
-        <option value="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/layersView.js" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/static/js/mainConfigProject.js" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/templates/project/new_project.html" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/forms.py" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/views.py" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/templates/index.html" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/templates/project/configProject.html" />
-        <option value="$PROJECT_DIR$/dashboardConfigApp/templates/base.html" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/static/css/new_project.less" />
-        <option value="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/app.js" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/models.py" />
+        <option value="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/models/ConfigDashboardModels.js" />
+        <option value="$PROJECT_DIR$/dashboardConfigApp/templates/base.html" />
+        <option value="$PROJECT_DIR$/dashboardConfigApp/static/js/mainCreateProject.js" />
+        <option value="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/collections/ConfigDashboardCollections.js" />
+        <option value="$PROJECT_DIR$/dashboardConfigApp/static/js/main.js" />
+        <option value="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/app.js" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/templates/layers/getAndEditLayers.html" />
+        <option value="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/layersView.js" />
       </list>
     </option>
   </component>
@@ -284,6 +276,10 @@
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -303,7 +299,119 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dashboard configuration proyect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dashboard configuration proyect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboardConfigApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dashboard configuration proyect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dashboard configuration proyect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboardConfigApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dashboard configuration proyect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dashboard configuration proyect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboardConfigApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="collections" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dashboard configuration proyect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dashboard configuration proyect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboardConfigApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -662,7 +770,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#24#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -714,7 +822,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#24#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -830,6 +938,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -874,27 +983,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/layersView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.4074073">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/mainConfigProject.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29310346">
-          <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/web-forms.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33278418">
@@ -930,73 +1018,153 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#24#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05107084">
-          <caret line="47" column="57" selection-start-line="47" selection-start-column="57" selection-end-line="47" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/css/new_project.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.148148">
+        <state vertical-scroll-proportion="0.93793106">
           <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67545307">
+          <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/project/configProject.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.11861614">
           <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboardConfigApp/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.7413509">
           <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/init.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/mainAllProject.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/mainConfigProject.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29654035">
+          <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/mainCreateProject.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/models/ConfigDashboardModels.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/collections/ConfigDashboardCollections.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14827017">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/mainAllProject.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08896211">
+          <caret line="3" column="56" selection-start-line="3" selection-start-column="56" selection-end-line="3" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="59" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/layers/getAndEditLayers.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.800659">
-          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="85" column="124" selection-start-line="85" selection-start-column="124" selection-end-line="85" selection-end-column="124" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/projectView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/layersView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05930807">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding />
         </state>
       </provider>
