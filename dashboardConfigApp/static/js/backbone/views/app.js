@@ -3,6 +3,7 @@ ConfigDashboard.Views.App = Backbone.View.extend({
 	events: {
 		'change #btnOpenFile': 'loadImageIntoContainer',
 	 	'click .containerImageSaved path': 'clickLayerToAdd',
+		'click #btnLoadDataOfImage': 'btnClickLoadDataOfImage',
 	},
 	initialize: function($el){
 		this.$el = $el;
@@ -21,5 +22,19 @@ ConfigDashboard.Views.App = Backbone.View.extend({
 		var $path= $(sender.currentTarget);
 		var idRegion = $path.attr('id');
 		$('#txtCodigoCapa').val(idRegion)
+	},
+	btnClickLoadDataOfImage: function(){
+		var idProject = $('#txtIdProject').val();
+		var idImage = $('#txtIdImageLoaded').val();
+        $('#container_data_layer_loaded').empty();
+		window.collections.layersLoaded = new ConfigDashboard.Collections.LayersLoaded();
+		window.views.layersOfImageLoaded = new ConfigDashboard.Views.LayersViewLoaded({
+				model: window.collections.layersLoaded
+			});
+		window.collections.layersLoaded.fetch({
+			data : {
+				image: idImage
+			}
+		});
 	}
 });

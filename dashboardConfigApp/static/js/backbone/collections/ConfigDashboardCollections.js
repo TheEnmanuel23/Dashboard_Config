@@ -7,3 +7,8 @@ ConfigDashboard.Collections.LayersCollections = Backbone.Collection.extend({
 	Model: ConfigDashboard.Models.LayersModel,
 	// url: '/get_layers/project/' + this.idProject
 });
+
+ConfigDashboard.Collections.LayersLoaded = Backbone.Collection.extend({
+	model: ConfigDashboard.Models.LayersModel,
+	url: '/project/layers/'
+});
