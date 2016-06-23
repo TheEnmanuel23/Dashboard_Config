@@ -4,6 +4,7 @@
        	<div class="well">
             <input type="hidden" name="txtIdProject" value="{{project.pk}}" id="txtIdProject">
             <input type="hidden" name="txtIdImageLoaded" value="{{singleImage.pk}}" id="txtIdImageLoaded">
+            <input type="hidden" value="{{singleImage.imagen.url}}" id="txtUrlImage">
             <div class="input-group proyect-detail">
               <span class="input-group-btn">
                 <label class="btn btn-default">Descripción:</label>
@@ -14,13 +15,16 @@
               <span class="input-group-btn">
                 <label class="btn btn-default">URL:</label>
               </span>
-              <input type="text" class="form-control" value="{{singleImage.imagen.url}}" disabled="">
+              <input type="text" class="form-control" value="{{singleImage.imagen.url}}">
             </div>
             <a target="_blank" href= '{{ singleImage.imagen.url }}'>{{ singleImage }}</a>
         </div>
         <div class="panel">
              <a class="btn btn-default" id="btnLoadDataOfImage">Cargar PATH de imagen</a>
         </div>
+       <div id="container-image-to-map" style="display: none;">
+            <!-- aqui va la imagen que voy a mapear -->
+       </div>
          <div class="row">
             <div class="col-lg-6">
                  <div class="panel panel-primary">
@@ -29,13 +33,13 @@
                     </div>
                      <div class="panel-body">
                          <table class="table table-striped">
-                    <thead>
-                        <th>Id capa</th>
-                        <th>Descripción</th>
-                    </thead>
-                    <tbody id="container_data_layer_loaded">
-                    </tbody>
-                </table>
+                            <thead>
+                                <th class="col-lg-4">Id capa</th>
+                                <th class="col-lg-8">Descripción</th>
+                            </thead>
+                            <tbody id="container_data_layer_loaded">
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -45,6 +49,35 @@
                         Capas sin guardar
                     </div>
                      <div class="panel-body">
+                         <form action=""  method="POST">
+                             {{ LayerFormSet.management_form }}
+                             {% load widget_tweaks %}
+                             {% csrf_token %}
+                             <table class="table table-striped">
+                                <thead>
+                                    <th class="col-lg-3">Path</th>
+                                    <th class="col-lg-7">Descripción</th>
+                                    <th class]="col-log-2"></th>
+                                </thead>
+                                <tbody id="container_data_layer_no-save">
+                                     {% for formset in LayerFormSet.forms %}
+                                          <tr>
+                                                <td>
+                                                    {% for formHidden in formset.hidden_fields %}
+                                                        {{ formHidden }}
+                                                    {% endfor %}
+                                                    {% if formset.instance.pk %}
+                                                        {{ formset.DELETE }}
+                                                    {% endif %}
+                                                    {{ formset.idCapa|add_class:"form-control"|attr:"required:required"}}
+                                                </td>
+                                                <td>{{ formset.descripcion|add_class:"form-control"|attr:"required:required" }}</td>
+                                          </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                             <input type="submit" class="btn btn-success" value="Guardar">
+                         </form>
                     </div>
                  </div>
             </div>
@@ -59,5 +92,20 @@
                 <%= descripcion %>
             </td>
         </tr>
+    </script>
+    <script type="text/template" id="layerNoSavedTemplate">
+        <tr>
+            <td>
+                <input id="id_capa_set-<%= id %>-id" name="capa_set-<%= id %>-id" type="hidden" >
+                <input id="id_capa_set-<%= id %>-image" name="capa_set-<%= id %>-image" type="hidden" >
+                <input class="form-control" id="id_capa_set-<%= id %>-idCapa" maxlength="50" name="capa_set-<%= id %>-idCapa" required="required" type="text" value="<%= path %>">
+            </td>
+            <td>
+                <input class="form-control" id="id_capa_set-0-descripcion" maxlength="140" name="capa_set-<%= id %>-descripcion" required="required" type="text" value="<%= descripcion %>">
+            </td>
+            <td>
+                <a href="" class="btn btn-danger">Remover <span class="glyphicon glyphicon-remove-sign"></span></a>
+            </td>
+      </tr>
     </script>
 {% endblock contentLayers %}

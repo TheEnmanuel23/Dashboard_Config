@@ -12,3 +12,5 @@ ConfigDashboard.Collections.LayersLoaded = Backbone.Collection.extend({
 	model: ConfigDashboard.Models.LayersModel,
 	url: '/project/layers/'
 });
+
+ConfigDashboard.Collections.LayersNoSaved = Backbone.Collection.extend();

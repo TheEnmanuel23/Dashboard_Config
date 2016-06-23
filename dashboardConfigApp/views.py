@@ -97,9 +97,20 @@ class AddLayer( UpdateView ):
         context = super( AddLayer, self ).get_context_data( **kwargs )
         project = Proyecto.objects.get( pk=self.object.proyecto.pk )
         context[ 'project' ] = project
-        context[ 'LayerFormSet' ] = LayerFormSet( )
+        context[ 'LayerFormSet' ] = LayerFormSet()
         context[ 'singleImage' ] = self.object
         return context
+
+    def post( self, request, *args, **kwargs ):
+        self.object = self.get_object( )
+        layerFormSet = LayerFormSet( request.POST, instance=self.object )
+        if (layerFormSet.is_valid( )):
+            return self.form_valid( layerFormSet )
+
+    def form_valid( self, layerFormSet ):
+        layerFormSet.instance = self.object
+        layerFormSet.save( )
+        return HttpResponseRedirect( self.get_success_url( ) )
 
 
 class ListLayers( ListView ):
