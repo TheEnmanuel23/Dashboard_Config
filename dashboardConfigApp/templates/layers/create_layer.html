@@ -101,10 +101,10 @@
                 <input class="form-control" id="id_capa_set-<%= id %>-idCapa" maxlength="50" name="capa_set-<%= id %>-idCapa" required="required" type="text" value="<%= path %>">
             </td>
             <td>
-                <input class="form-control" id="id_capa_set-0-descripcion" maxlength="140" name="capa_set-<%= id %>-descripcion" required="required" type="text" value="<%= descripcion %>">
+                <input class="form-control" id="id_capa_set-<%= id %>-descripcion" maxlength="140" name="capa_set-<%= id %>-descripcion" required="required" type="text" value="<%= descripcion %>">
             </td>
             <td>
-                <a href="" class="btn btn-danger">Remover <span class="glyphicon glyphicon-remove-sign"></span></a>
+                <a href="" class="btn btn-danger" id="removePathRow">Remover <span class="glyphicon glyphicon-remove-sign"></span></a>
             </td>
       </tr>
     </script>

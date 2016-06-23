@@ -23,6 +23,7 @@ ConfigDashboard.Views.LayerViewSingleLoaded = Backbone.View.extend({
 ConfigDashboard.Views.LayersViewNoSaved = Backbone.View.extend({
     initialize: function () {
         this.model.on('add', this.addRowLayerNoSaved);
+        this.model.on('remove', this.removeRowLayerNoSaved);
     },
     addRowLayerNoSaved: function (layer) {
         if(layer.view == null){
@@ -32,9 +33,22 @@ ConfigDashboard.Views.LayersViewNoSaved = Backbone.View.extend({
         }
         layer.view.render();
         layer.view.$el.appendTo('#container_data_layer_no-save');
+    },
+    removeRowLayerNoSaved: function(layer){
+        if(layer.view != null){
+            layer.view.remove();
+        }
+        layer.clear();
     }
 });
 ConfigDashboard.Views.LayerViewSingleNoSaved = Backbone.View.extend({
+    events: {
+        'click #removePathRow': 'remove_path_click'
+    },
+    remove_path_click: function(e){
+        e.preventDefault();
+        this.model.collection.remove(this.model);
+    },
     render: function(){
         this.setElement(setTemplateRow(this, 'layerNoSavedTemplate'))
         return this;

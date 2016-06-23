@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62ca973c-a83a-477e-96b3-d9b3be0e04bd" name="Default" comment="#">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/layersView.js" afterPath="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/layersView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/templates/layers/create_layer.html" afterPath="$PROJECT_DIR$/dashboardConfigApp/templates/layers/create_layer.html" />
     </list>
     <ignored path="Dashboard configuration proyect.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,31 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getAndEditLayers.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/layers/getAndEditLayers.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="54" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="73" column="15" selection-start-line="69" selection-start-column="10" selection-end-line="73" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="layersView.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/layersView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47446457">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.16968699">
+              <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -103,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="66" column="3" selection-start-line="0" selection-start-column="0" selection-end-line="66" selection-end-column="3" />
+              <caret line="27" column="34" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -123,7 +105,7 @@
         <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/layers/create_layer.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+              <caret line="100" column="173" selection-start-line="100" selection-start-column="169" selection-end-line="100" selection-end-column="173" />
               <folding>
                 <element signature="e#1296#1318#0#HTML" expanded="true" />
               </folding>
@@ -169,8 +151,8 @@
         <option value="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/collections/ConfigDashboardCollections.js" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/views.py" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/app.js" />
-        <option value="$PROJECT_DIR$/dashboardConfigApp/templates/layers/create_layer.html" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/static/js/main.js" />
+        <option value="$PROJECT_DIR$/dashboardConfigApp/templates/layers/create_layer.html" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/layersView.js" />
       </list>
     </option>
@@ -1142,18 +1124,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/collections/ConfigDashboardCollections.js">
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="42" />
+          <caret line="27" column="175" selection-start-line="27" selection-start-column="144" selection-end-line="27" selection-end-column="175" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7034596">
+          <caret line="73" column="15" selection-start-line="69" selection-start-column="10" selection-end-line="73" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/layers/getAndEditLayers.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.53377265">
           <caret line="24" column="54" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/collections/ConfigDashboardCollections.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -1168,40 +1166,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="175" selection-start-line="27" selection-start-column="144" selection-end-line="27" selection-end-column="175" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/layers/create_layer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-          <folding>
-            <element signature="e#1296#1318#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="15" selection-start-line="69" selection-start-column="10" selection-end-line="73" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="3" selection-start-line="0" selection-start-column="0" selection-end-line="66" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1210,10 +1174,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="34" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/layers/create_layer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="100" column="173" selection-start-line="100" selection-start-column="169" selection-end-line="100" selection-end-column="173" />
+          <folding>
+            <element signature="e#1296#1318#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/layersView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47446457">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.16968699">
+          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
           <folding />
         </state>
       </provider>
