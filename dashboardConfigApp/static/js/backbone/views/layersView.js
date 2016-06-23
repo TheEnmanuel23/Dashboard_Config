@@ -15,9 +15,7 @@ ConfigDashboard.Views.LayersViewLoaded = Backbone.View.extend({
 
 ConfigDashboard.Views.LayerViewSingleLoaded = Backbone.View.extend({
     render: function(){
-        var template = _.template($('#layerLoadedTemplate').html());
-        var html = template(this.model.toJSON());
-        this.setElement(html);
+        this.setElement(setTemplateRow(this, 'layerLoadedTemplate'));
         return this;
     }
 });
@@ -38,9 +36,13 @@ ConfigDashboard.Views.LayersViewNoSaved = Backbone.View.extend({
 });
 ConfigDashboard.Views.LayerViewSingleNoSaved = Backbone.View.extend({
     render: function(){
-        var template = _.template($('#layerNoSavedTemplate').html());
-        var html = template(this.model.toJSON());
-        this.setElement(html);
+        this.setElement(setTemplateRow(this, 'layerNoSavedTemplate'))
         return this;
     }
 });
+
+function setTemplateRow(self, templatName){
+  var template = _.template($('#' + templatName).html());
+  var html = template(self.model.toJSON());
+  return html;
+}

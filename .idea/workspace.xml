@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62ca973c-a83a-477e-96b3-d9b3be0e04bd" name="Default" comment="#">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/layersView.js" afterPath="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/layersView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/static/js/main.js" afterPath="$PROJECT_DIR$/dashboardConfigApp/static/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/templates/layers/create_layer.html" afterPath="$PROJECT_DIR$/dashboardConfigApp/templates/layers/create_layer.html" />
     </list>
     <ignored path="Dashboard configuration proyect.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -96,8 +92,8 @@
       <file leaf-file-name="layersView.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/layersView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.47446457">
+              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -1216,8 +1212,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/layersView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.47446457">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
           <folding />
         </state>
       </provider>
