@@ -174,3 +174,41 @@ class DeleteLayer(DeleteView):
     def get_success_url(self):
         image = Image.objects.get(pk = self.object.image.pk)
         return reverse_lazy('get_layer_view', kwargs={'image': image.pk})
+
+
+class IndicadorList(ListView):
+    model = Indicador
+    template_name = "indicadores/list_indicadores.html"
+    context_object_name = 'listIndicadores'
+
+    def get_queryset(self):
+        idProject = self.kwargs['pk']
+        queryset = Indicador.objects.filter(proyecto__pk = idProject)
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super(IndicadorList, self).get_context_data(**kwargs)
+        idProject = self.kwargs['pk']
+        image = Image.objects.get(proyecto__pk = idProject)
+        project =image.proyecto
+        context[ 'singleImage' ] = image
+        context[ 'project' ] = project
+        return context
+
+class UpdateIndicador(UpdateView):
+    model = Indicador
+    template_name = 'indicadores/update_indicador.html'
+    fields = [
+        'descripcion',
+    ]
+
+    def get_context_data(self, **kwargs):
+        context = super(UpdateIndicador, self).get_context_data(**kwargs)
+        image = Image.objects.get(proyecto__pk = self.object.proyecto.pk)
+        project = self.object.proyecto
+        context[ 'singleImage' ] = image
+        context[ 'project' ] = project
+        return context
+
+    def get_success_url(self):
+        return reverse_lazy('indicadorList', kwargs = { 'pk' : self.object.proyecto.pk })

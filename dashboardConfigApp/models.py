@@ -31,13 +31,18 @@ class TipoCampo(models.Model):
 
 class Indicador(models.Model):
 	descripcion = models.CharField(max_length=200)
-	tipo = models.ForeignKey(TipoCampo)
+	proyecto = models.ForeignKey(Proyecto, default=None)
+
+	def __str__(self):
+		return self.descripcion
+	# tipo = models.ForeignKey(TipoCampo)
 
 class Condicion(models.Model):
 	descripcion = models.CharField(max_length=100)
 	tipo = models.CharField(max_length=5)
 
 class Capa_Indicador(models.Model):
+	proyecto = models.ForeignKey(Proyecto, default=None)
 	indicador = models.ForeignKey(Indicador)
 	capa = models.ForeignKey(Capa)
 	valor = models.CharField(max_length=100)

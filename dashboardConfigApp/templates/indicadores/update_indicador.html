@@ -1,0 +1,17 @@
+{% extends "project/configProject.html" %}
+{% block project-options %}
+    <div class="container">
+        <form  method="POST" data-toggle="validator" enctype="multipart/form-data" role="form">
+	        {% load widget_tweaks %}
+            {% csrf_token %}
+            <div class="well">
+                <h5>Descripción</h5>
+                {{ form.descripcion|add_class:"form-control"|attr:"required:required"|attr:"id:txtProjectName"}}
+            </div>
+            <div class="acciones">
+                <a  class="btn btn-default" href="{% url 'indicadorList' project.pk %}"><span class="glyphicon glyphicon-arrow-left"></span> Volver</a>
+                <input type="submit" value="Guardar" class="btn btn-success"/>
+            </div>
+        </form>
+    </div>
+{% endblock project-options %}

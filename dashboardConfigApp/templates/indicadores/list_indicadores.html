@@ -1,0 +1,35 @@
+{% extends "project/configProject.html" %}
+{% block project-options %}
+    <div class="container">
+        <nav>
+            <ol class="breadcrumb">
+                <li class="active" id="viewLayers"><a href="{% url 'indicadorList' project.pk %}">Ver indicadores</a></li>
+                <li><a href="">Agregar indicador</a></li>
+            </ol>
+        </nav>
+        <table class="table table-striped allProject_table">
+            <thead>
+                <th>Id</th>
+                <th>Descripción</th>
+            </thead>
+            <tbody id="allProject_table_tbody">
+                {% for indicador in listIndicadores %}
+                    <tr>
+                        <td>{{indicador.pk}}</td>
+                        <td>{{indicador.descripcion}}</td>
+                         <td>
+                             <a href="{% url 'updateIndicador' project.pk indicador.pk %}" class="btn btn-warning" id="{{project.pk}}">Editar
+                                <span class="glyphicon glyphicon-edit"></span>
+                            </a>
+                         </td>
+                        <td>
+                            <a href="{% url 'deleteProject' project.pk %}" class="btn btn-danger" id="{{project.pk}}">Eliminar
+                                <span class="glyphicon glyphicon-remove-sign"></span>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock project-options %}

@@ -31,4 +31,7 @@ urlpatterns = [
     url(r'^project/layers/', ListLayersJson.as_view(), name='get_layer_json'),
     url(r'^project/image/(?P<image>\d+)/delete_layers/', ListLayersView.as_view(), name='get_layer_view'),
     url(r'^deleteLayer/(?P<pk>\d+)$', DeleteLayer.as_view(), name='deleteLayer'),
+    url(r'^project/(?P<pk>\d+)/indicador', IndicadorList.as_view(), name='indicadorList'),
+    url(r'^project/(\d+)/updateIndicador/(?P<pk>\d+)', UpdateIndicador.as_view(), name='updateIndicador'),
+
 ]
