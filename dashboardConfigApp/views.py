@@ -5,7 +5,7 @@ from django.views.generic import ListView
 from .serializers import *
 from django.views import generic
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
-from django.core.urlresolvers import reverse_lazy, reverse
+from django.core.urlresolvers import reverse_lazy
 
 
 # Create your views here.
@@ -58,7 +58,6 @@ def GetInfoProject( request, idProject ):
 class GetAndUpdateLayers( UpdateView ):
     model = Image
     template_name = 'layers/getAndEditLayers.html'
-    success_url = reverse_lazy( 'home' )
     fields = [
         'imagen',
         'descripcion'
@@ -83,11 +82,14 @@ class GetAndUpdateLayers( UpdateView ):
         layerFormSet.save( )
         return HttpResponseRedirect( self.get_success_url( ) )
 
+    def get_success_url(self):
+        return reverse_lazy( 'get_update_layers', kwargs = {
+            'pk' : self.kwargs['pk']
+        })
 
 class AddLayer( UpdateView ):
     model = Image
     template_name = "layers/create_layer.html"
-    success_url = reverse_lazy( 'home' )
     fields = [
         'descripcion',
         'imagen',
@@ -111,6 +113,12 @@ class AddLayer( UpdateView ):
         layerFormSet.instance = self.object
         layerFormSet.save( )
         return HttpResponseRedirect( self.get_success_url( ) )
+
+    def get_success_url(self):
+        return reverse_lazy( 'add_layer', kwargs = {
+            'idproject':self.kwargs['idproject'],
+            'pk' : self.kwargs['pk']
+        })
 
 
 class ListLayersJson( ListView ):
@@ -154,7 +162,6 @@ class DeleteLayer(DeleteView):
     model = Capa
     template_name = 'layers/deleteLayer.html'
     context_object_name = 'deleteLayer'
-    # success_url = reverse_lazy( 'home', kwargs =  )
 
     def get_context_data(self, **kwargs):
         context= super(DeleteLayer, self).get_context_data(**kwargs)
@@ -166,4 +173,4 @@ class DeleteLayer(DeleteView):
 
     def get_success_url(self):
         image = Image.objects.get(pk = self.object.image.pk)
-        return reverse('get_layer_view', kwargs={'image': image.pk})
+        return reverse_lazy('get_layer_view', kwargs={'image': image.pk})

@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62ca973c-a83a-477e-96b3-d9b3be0e04bd" name="Default" comment="#">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dashboardConfigApp/templates/layers/deleteLayer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dashboardConfigApp/templates/layers/listLayers.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfig/urls.py" afterPath="$PROJECT_DIR$/dashboardConfig/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/models.py" afterPath="$PROJECT_DIR$/dashboardConfigApp/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/app.js" afterPath="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/templates/layers/layers.html" afterPath="$PROJECT_DIR$/dashboardConfigApp/templates/layers/layers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/templates/project/configProject.html" afterPath="$PROJECT_DIR$/dashboardConfigApp/templates/project/configProject.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/views.py" afterPath="$PROJECT_DIR$/dashboardConfigApp/views.py" />
     </list>
     <ignored path="Dashboard configuration proyect.iws" />
@@ -38,8 +35,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboardConfigApp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7034596">
-              <caret line="160" column="49" selection-start-line="160" selection-start-column="49" selection-end-line="160" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.3476112">
+              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -71,7 +68,27 @@
         <entry file="file://$PROJECT_DIR$/dashboardConfig/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="34" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="34" />
+              <caret line="28" column="104" selection-start-line="28" selection-start-column="87" selection-end-line="28" selection-end-column="104" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layers.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/layers/layers.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="81" selection-start-line="4" selection-start-column="81" selection-end-line="4" selection-end-column="81" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="configProject.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/project/configProject.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="68" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -133,7 +150,6 @@
         <option value="$PROJECT_DIR$/dashboardConfigApp/templates/project/new_project.html" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/forms.py" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/templates/index.html" />
-        <option value="$PROJECT_DIR$/dashboardConfigApp/templates/project/configProject.html" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/models/ConfigDashboardModels.js" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/static/js/mainCreateProject.js" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/templates/layers/create_layer.html" />
@@ -144,11 +160,12 @@
         <option value="$PROJECT_DIR$/dashboardConfigApp/static/css/new_project.less" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/templates/layers/getAndEditLayers.html" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/static/js/backbone/views/app.js" />
-        <option value="$PROJECT_DIR$/dashboardConfig/urls.py" />
-        <option value="$PROJECT_DIR$/dashboardConfigApp/templates/layers/layers.html" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/models.py" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/templates/layers/listLayers.html" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/templates/layers/deleteLayer.html" />
+        <option value="$PROJECT_DIR$/dashboardConfig/urls.py" />
+        <option value="$PROJECT_DIR$/dashboardConfigApp/templates/layers/layers.html" />
+        <option value="$PROJECT_DIR$/dashboardConfigApp/templates/project/configProject.html" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/views.py" />
       </list>
     </option>
@@ -1000,14 +1017,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/project/configProject.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4151565">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/project/projectInfo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41680396">
@@ -1176,14 +1185,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/layers/layers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17792422">
-          <caret line="6" column="64" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/layers/deleteLayer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1195,15 +1196,31 @@
     <entry file="file://$PROJECT_DIR$/dashboardConfig/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="34" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="34" />
+          <caret line="28" column="104" selection-start-line="28" selection-start-column="87" selection-end-line="28" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/layers/layers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="81" selection-start-line="4" selection-start-column="81" selection-end-line="4" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/project/configProject.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="68" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboardConfigApp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7034596">
-          <caret line="160" column="49" selection-start-line="160" selection-start-column="49" selection-end-line="160" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.3476112">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>

@@ -6,7 +6,7 @@
 					<nav>
 						<ul>
 							<li><a href="{% url 'configProject' project.pk %}"><span class="glyphicon glyphicon-home"></span> {{project.nombre}}</a></li>
-							<li><a href="{% url 'get_update_layers' project.pk  singleImage.pk %}"><span class="glyphicon glyphicon-th-large"></span> Configurar capas</a></li>
+							<li><a href="{% url 'get_update_layers' singleImage.pk %}"><span class="glyphicon glyphicon-th-large"></span> Configurar capas</a></li>
 							<li><a href=""><span class="glyphicon glyphicon-scale"></span> Indicadores</a></li>
 							<li><a href=""><span class="glyphicon glyphicon-object-align-top"></span> Capas-Indicadores</a></li>
 							<li><a href=""><span class="glyphicon glyphicon-random"></span> Condición para indicadores</a></li>
