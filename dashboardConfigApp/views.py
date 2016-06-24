@@ -213,3 +213,18 @@ class UpdateIndicador(UpdateView):
 
     def get_success_url(self):
         return reverse_lazy('indicadorList', kwargs = { 'pk' : self.object.proyecto.pk })
+
+class DeleteIndicador(DeleteView):
+    model = Indicador
+    template_name = 'indicadores/delete_indicador.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(DeleteIndicador, self).get_context_data(**kwargs)
+        image = Image.objects.get(proyecto__pk = self.object.proyecto.pk)
+        project = self.object.proyecto
+        context[ 'singleImage' ] = image
+        context[ 'project' ] = project
+        return context
+
+    def get_success_url(self):
+        return reverse_lazy('indicadorList', kwargs = { 'pk' : self.object.proyecto.pk })

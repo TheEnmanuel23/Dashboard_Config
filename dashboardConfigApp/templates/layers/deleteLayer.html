@@ -4,7 +4,7 @@
         <div class="panel panel-primary">
             <div class="panel-heading">Elminando capa: <strong>{{ deleteLayer.idCapa }}</strong></div>
             <div class="panel-body">
-                <form  method="POST" data-toggle="validator" enctype="multipart/form-data" role="form">{% csrf_token %}
+                <form  method="POST" data-toggle="validator" enctype="multipart/form-data" role="form">
                     {% csrf_token %}
                     <div class="well">
                         <p>¿Está seguro de eliminar esta capa?</p>

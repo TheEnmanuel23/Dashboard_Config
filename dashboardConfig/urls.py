@@ -33,5 +33,6 @@ urlpatterns = [
     url(r'^deleteLayer/(?P<pk>\d+)$', DeleteLayer.as_view(), name='deleteLayer'),
     url(r'^project/(?P<pk>\d+)/indicador', IndicadorList.as_view(), name='indicadorList'),
     url(r'^project/(\d+)/updateIndicador/(?P<pk>\d+)', UpdateIndicador.as_view(), name='updateIndicador'),
+    url(r'^project/(\d+)/deleteIndicador/(?P<pk>\d+)', DeleteIndicador.as_view(), name='deleteIndicador'),
 
 ]

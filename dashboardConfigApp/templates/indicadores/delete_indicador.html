@@ -1,0 +1,19 @@
+{% extends "project/configProject.html" %}
+{% block project-options %}
+    <div class="container">
+         <div class="panel panel-primary">
+            <div class="panel-heading">Elminando indicador: <strong>{{ indicador.descripcion }}</strong></div>
+            <div class="panel-body">
+                <form  method="POST" data-toggle="validator" enctype="multipart/form-data" role="form">{% csrf_token %}
+                    <div class="well">
+                        <p>¿Está seguro de eliminar este indicador?</p>
+                    </div>
+                    <div class="acciones">
+                        <a href="{% url 'indicadorList' project.pk %}" class="btn btn-default">No, Cancelar.</a>
+                        <input type="submit" value="Sí, Eliminar" class="btn btn-danger" id="btnDelete"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock project-options %}
