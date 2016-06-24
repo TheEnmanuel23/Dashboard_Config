@@ -1,12 +1,14 @@
 {% extends "project/configProject.html" %}
 {% block project-options %}
     <div class="container">
-        <form  method="POST" data-toggle="validator" enctype="multipart/form-data" role="form">
+        <form  method="POST" class="col-md-7" data-toggle="validator" enctype="multipart/form-data" role="form">
 	        {% load widget_tweaks %}
             {% csrf_token %}
             <div class="well">
                 <h5>Descripción</h5>
                 {{ form.descripcion|add_class:"form-control"|attr:"required:required"|attr:"id:txtProjectName"}}
+                 <h5>Proyecto</h5>
+                {{ form.proyecto|add_class:"form-control" }}
             </div>
             <div class="acciones">
                 <a  class="btn btn-default" href="{% url 'indicadorList' project.pk %}"><span class="glyphicon glyphicon-arrow-left"></span> Volver</a>

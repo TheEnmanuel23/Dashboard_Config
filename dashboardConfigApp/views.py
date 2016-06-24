@@ -200,6 +200,7 @@ class UpdateIndicador(UpdateView):
     template_name = 'indicadores/update_indicador.html'
     fields = [
         'descripcion',
+        'proyecto'
     ]
 
     def get_context_data(self, **kwargs):
