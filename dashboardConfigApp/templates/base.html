@@ -69,9 +69,11 @@
         $(function(){
             var workSpace = Snap("#containerImageSaved");
             var url = '{{ singleImage.imagen.url }}'
-            Snap.load(url, function ( data ) {
-                workSpace.append(data);
-            });
+            if(url != null && workSpace != null){
+                Snap.load(url, function (data) {
+                    workSpace.append(data);
+                });
+            }
         })
     </script>
 </body>

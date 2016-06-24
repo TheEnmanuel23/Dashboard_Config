@@ -24,43 +24,60 @@ ConfigDashboard.Views.App = Backbone.View.extend({
 		$('#txtCodigoCapa').val(idRegion)
 	},
 	btnClickLoadDataOfImage: function(){
-		this.loadLayerImageSaved();
-		this.loadLayerImageNoSaved();
+        $('#container-image-to-map').empty();
+        $('#container_data_layer_no-save').empty();
+		this.fillArrayPath();
+		this.setAllLayers();
 	},
-	loadLayerImageSaved:function(){
+	setAllLayers:function(){
 		var idImage = $('#txtIdImageLoaded').val();
         $('#container_data_layer_loaded').empty();
+		window.arrayPathToAdd = []
 		window.collections.layersLoaded = new ConfigDashboard.Collections.LayersLoaded();
 		window.views.layersOfImageLoaded = new ConfigDashboard.Views.LayersViewLoaded({
 			model: window.collections.layersLoaded
 		});
-		window.collections.layersLoaded.fetch({
+		var layersLoaded = window.collections.layersLoaded.fetch({
 			data : {
 				image: idImage
 			}
 		});
+		layersLoaded.then(this.configLayersNoSaved);
 	},
-	loadLayerImageNoSaved: function(){
+	configLayersNoSaved: function(){
+		var arrayPathToAdd = [];
+		for(i = 0; i < window.arrayPath.length; i++){
+			path = window.arrayPath[i];
+			layer = window.collections.layersLoaded.find({idCapa : path});
+			if(layer == null){
+				arrayPathToAdd.push(path);
+			}
+		}
 		window.collections.layerNoSaved = new ConfigDashboard.Collections.LayersNoSaved();
 		window.views.layerNoSaved = new ConfigDashboard.Views.LayersViewNoSaved({
 			model : window.collections.layerNoSaved
 		});
-
-        $('#container-image-to-map').empty();
-        $('#container_data_layer_no-save').empty();
+		for(i = 0; i < arrayPathToAdd.length; i++){
+			path = arrayPathToAdd[i];
+			var count = parseInt($('#container_data_layer_no-save').children().length);
+			window.collections.layerNoSaved.add([{
+				id : count,
+				path : path,
+				descripcion : ''
+			}]);
+			$('#id_capa_set-TOTAL_FORMS').attr('value', count + 1);
+		}
+	},
+	fillArrayPath: function(){
 	  	var workSpace = Snap("#container-image-to-map");
 		var url = $('#txtUrlImage').val();
+		window.arrayPath = [];
+
 		Snap.load(url, function ( data ) {
 			workSpace.append( data );
 			$("#container-image-to-map path").each(function(){
 				path = $(this).attr('id');
-			  	var count = parseInt($('#container_data_layer_no-save').children().length);
-				window.collections.layerNoSaved.add({
-					id : count,
-					path : path,
-					descripcion : ''
-				});
-                $('#id_capa_set-TOTAL_FORMS').attr('value', count + 1);
+				arrayPath.push(path);
 			});
 		});
 	}
