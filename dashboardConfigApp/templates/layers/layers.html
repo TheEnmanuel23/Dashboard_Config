@@ -2,8 +2,8 @@
 {% block project-options %}
     <nav>
         <ol class="breadcrumb">
-            <li class="active"><a href="{% url 'get_update_layers' project.pk  singleImage.pk %}">Ver capas</a></li>
-           <li><a href="{% url 'add_layer' project.pk  singleImage.pk %}">Agregar capas</a></li>
+            <li class="active" id="viewLayers"><a href="{% url 'get_update_layers' project.pk  singleImage.pk %}">Ver capas</a></li>
+            <li><a href="{% url 'add_layer' project.pk  singleImage.pk %}">Agregar capas</a></li>
         </ol>
     </nav>
     {% block contentLayers %}

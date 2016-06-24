@@ -72,6 +72,11 @@
             if(url != null && workSpace != null){
                 Snap.load(url, function (data) {
                     workSpace.append(data);
+                    var count = parseInt($('#layers-list').children().length);
+                    for(i = 0; i < count; i++){
+                        var layer = $('#id_capa_set-' + i + '-idCapa').val();
+                        $("#containerImageSaved #" + layer).addClass('added-layer');
+                    }
                 });
             }
         })

@@ -1,1 +1,68 @@
-.container-list-projects{margin:20px}.containerImageSaved path{stroke:#fff;stroke-width:1;fill:rgba(125,125,125,.5)}.containerImageSaved path:hover{cursor:pointer;fill:#7d7d7d}.containerImageSaved .added-layer{fill:#1a8053}svg path{stroke:#fff;stroke-width:1;fill:#c30}svg path:hover{cursor:pointer;fill:rgba(64,64,64,.5)}.navbar-main{margin-bottom:0}.row-panel-project{height:100vh;display:flex}.row-panel-project .container-panel{flex:1;display:flex}.row-panel-project .container-panel .panel-project,.row-panel-project .container-panel .panel_selected{overflow-y:auto;padding:1em}.row-panel-project .container-panel .panel_selected .container-proyect-info .panel{width:1000px}.row-panel-project .container-panel .panel_selected .container-proyect-info .panel .panel-body .well .proyect-detail{margin-bottom:10px}.row-panel-project .container-panel .panel-project{background:#166898}.row-panel-project .container-panel .panel-project nav ul{margin-left:0;padding-left:0}.row-panel-project .container-panel .panel-project nav ul li{list-style:none;padding:10px}.row-panel-project .container-panel .panel-project nav ul li:hover{background:#03446B}.row-panel-project .container-panel .panel-project nav ul li a{text-decoration:none;margin:0;display:block;width:100%;height:100%;color:#d8d8d8}
+.container-list-projects {
+  margin: 20px;
+}
+.containerImageSaved path {
+  stroke: white;
+  stroke-width: 1;
+  fill: rgba(125, 125, 125, 0.5);
+}
+.containerImageSaved path:hover {
+  cursor: pointer;
+  fill: #7d7d7d;
+}
+.containerImageSaved .added-layer {
+  fill: #1a8053;
+}
+svg path {
+  stroke: white;
+  stroke-width: 1;
+  fill: #cc3300;
+}
+svg path:hover {
+  cursor: pointer;
+  fill: rgba(64, 64, 64, 0.5);
+}
+.navbar-main {
+  margin-bottom: 0;
+}
+.row-panel-project {
+  height: 100vh;
+  display: flex;
+}
+.row-panel-project .container-panel {
+  flex: 1;
+  display: flex;
+}
+.row-panel-project .container-panel .panel_selected,
+.row-panel-project .container-panel .panel-project {
+  overflow-y: auto;
+  padding: 1em;
+}
+.row-panel-project .container-panel .panel_selected .container-proyect-info .panel {
+  width: 1000px;
+}
+.row-panel-project .container-panel .panel_selected .container-proyect-info .panel .panel-body .well .proyect-detail {
+  margin-bottom: 10px;
+}
+.row-panel-project .container-panel .panel-project {
+  background: #166898;
+}
+.row-panel-project .container-panel .panel-project nav ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+.row-panel-project .container-panel .panel-project nav ul li {
+  list-style: none;
+  padding: 10px;
+}
+.row-panel-project .container-panel .panel-project nav ul li:hover {
+  background: #03446B;
+}
+.row-panel-project .container-panel .panel-project nav ul li a {
+  text-decoration: none;
+  margin: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #d8d8d8;
+}

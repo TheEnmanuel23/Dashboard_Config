@@ -80,5 +80,5 @@ ConfigDashboard.Views.App = Backbone.View.extend({
 				arrayPath.push(path);
 			});
 		});
-	}
+	},
 });
