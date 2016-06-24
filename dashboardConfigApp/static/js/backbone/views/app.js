@@ -39,7 +39,8 @@ ConfigDashboard.Views.App = Backbone.View.extend({
 		});
 		var layersLoaded = window.collections.layersLoaded.fetch({
 			data : {
-				image: idImage
+				image: idImage,
+				format: 'json'
 			}
 		});
 		layersLoaded.then(this.configLayersNoSaved);

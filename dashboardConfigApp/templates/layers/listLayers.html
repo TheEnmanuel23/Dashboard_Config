@@ -1,0 +1,27 @@
+{% extends 'layers/layers.html' %}
+{% block contentLayers %}
+    <div class="container">
+        <table class="table table-striped allProject_table">
+            <thead>
+                <th>Id</th>
+                <th>Id Path</th>
+                <th>Descripción</th>
+                <th></th>
+            </thead>
+            <tbody id="allProject_table_tbody">
+                {% for layer in listLayers %}
+                    <tr>
+                        <td>{{layer.pk}}</td>
+                        <td>{{layer.idCapa}}</td>
+                        <td>{{layer.descripcion}}</td>
+                        <td>
+                            <a href="{% url 'deleteLayer' layer.pk %}" class="btn btn-danger" id="{{project.pk}}">Eliminar
+                                <span class="glyphicon glyphicon-remove-sign"></span>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock contentLayers %}

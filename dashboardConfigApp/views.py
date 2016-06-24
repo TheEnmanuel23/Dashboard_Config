@@ -5,7 +5,7 @@ from django.views.generic import ListView
 from .serializers import *
 from django.views import generic
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
-from django.core.urlresolvers import reverse_lazy
+from django.core.urlresolvers import reverse_lazy, reverse
 
 
 # Create your views here.
@@ -113,11 +113,11 @@ class AddLayer( UpdateView ):
         return HttpResponseRedirect( self.get_success_url( ) )
 
 
-class ListLayers( ListView ):
+class ListLayersJson( ListView ):
     model = Capa
 
     def get( self, request, *args, **kwargs ):
-        idImage = request.GET.get('image')
+        idImage = request.GET.get('image', None)
         self.object_list = self.model.objects.filter(image__pk = idImage)
         return self.json_to_response( )
 
@@ -130,3 +130,40 @@ class ListLayers( ListView ):
                 'image': layer.image.imagen.url
             } )
         return JsonResponse( data, safe=False )
+
+class ListLayersView( ListView):
+    model = Capa
+    template_name = 'layers/listLayers.html'
+    context_object_name = 'listLayers'
+
+    def get_queryset(self):
+        idImage = self.kwargs['image']
+        queryset = Capa.objects.filter(image__pk = idImage)
+        return queryset;
+
+    def get_context_data( self, **kwargs ):
+        idImage = self.kwargs['image']
+        context = super( ListLayersView, self ).get_context_data( **kwargs )
+        image = Image.objects.get(pk = idImage)
+        project = Proyecto.objects.get( pk= image.proyecto.pk )
+        context[ 'singleImage' ] = image
+        context[ 'project' ] = project
+        return context
+
+class DeleteLayer(DeleteView):
+    model = Capa
+    template_name = 'layers/deleteLayer.html'
+    context_object_name = 'deleteLayer'
+    # success_url = reverse_lazy( 'home', kwargs =  )
+
+    def get_context_data(self, **kwargs):
+        context= super(DeleteLayer, self).get_context_data(**kwargs)
+        image = Image.objects.get(pk = self.object.image.pk)
+        project = Proyecto.objects.get(pk = image.proyecto.pk)
+        context[ 'singleImage' ] = image
+        context[ 'project' ] = project
+        return context
+
+    def get_success_url(self):
+        image = Image.objects.get(pk = self.object.image.pk)
+        return reverse('get_layer_view', kwargs={'image': image.pk})
