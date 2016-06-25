@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62ca973c-a83a-477e-96b3-d9b3be0e04bd" name="Default" comment="#">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dashboardConfigApp/templates/indicadores/baseIndicador.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dashboardConfigApp/templates/indicadores/create_indicador.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfig/urls.py" afterPath="$PROJECT_DIR$/dashboardConfig/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/forms.py" afterPath="$PROJECT_DIR$/dashboardConfigApp/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/templates/indicadores/delete_indicador.html" afterPath="$PROJECT_DIR$/dashboardConfigApp/templates/indicadores/delete_indicador.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/templates/indicadores/list_indicadores.html" afterPath="$PROJECT_DIR$/dashboardConfigApp/templates/indicadores/list_indicadores.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/templates/indicadores/update_indicador.html" afterPath="$PROJECT_DIR$/dashboardConfigApp/templates/indicadores/update_indicador.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/views.py" afterPath="$PROJECT_DIR$/dashboardConfigApp/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboardConfigApp/templates/indicadores/create_indicador.html" afterPath="$PROJECT_DIR$/dashboardConfigApp/templates/indicadores/create_indicador.html" />
     </list>
     <ignored path="Dashboard configuration proyect.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,10 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboardConfigApp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5255354">
+            <state vertical-scroll-proportion="0.0">
               <caret line="248" column="37" selection-start-line="248" selection-start-column="37" selection-end-line="248" selection-end-column="37" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
@@ -48,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_indicador.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="create_indicador.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/indicadores/create_indicador.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.08896211">
+              <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -62,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/layers/create_layer.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="51" column="55" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="55" />
+              <caret line="60" column="40" selection-start-line="54" selection-start-column="28" selection-end-line="60" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -145,8 +136,8 @@
         <option value="$PROJECT_DIR$/dashboardConfigApp/templates/indicadores/delete_indicador.html" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/forms.py" />
         <option value="$PROJECT_DIR$/dashboardConfig/urls.py" />
-        <option value="$PROJECT_DIR$/dashboardConfigApp/templates/indicadores/create_indicador.html" />
         <option value="$PROJECT_DIR$/dashboardConfigApp/views.py" />
+        <option value="$PROJECT_DIR$/dashboardConfigApp/templates/indicadores/create_indicador.html" />
       </list>
     </option>
   </component>
@@ -1021,29 +1012,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="248" column="37" selection-start-line="248" selection-start-column="37" selection-end-line="248" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/layers/create_layer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="55" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="55" />
+          <caret line="60" column="40" selection-start-line="54" selection-start-column="28" selection-end-line="60" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboardConfigApp/templates/indicadores/create_indicador.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.08896211">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboardConfigApp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5255354">
-          <caret line="248" column="37" selection-start-line="248" selection-start-column="37" selection-end-line="248" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
