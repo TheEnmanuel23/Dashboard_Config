@@ -1,13 +1,6 @@
-{% extends "project/configProject.html" %}
-{% block project-options %}
-    <div class="container">
-        <nav>
-            <ol class="breadcrumb">
-                <li class="active" id="viewLayers"><a href="{% url 'indicadorList' project.pk %}">Ver indicadores</a></li>
-                <li><a href="">Agregar indicador</a></li>
-            </ol>
-        </nav>
-        <table class="table table-striped allProject_table">
+{% extends "indicadores/baseIndicador.html" %}
+{% block indicador_content %}
+     <table class="table table-striped allProject_table">
             <thead>
                 <th>Id</th>
                 <th>Descripción</th>
@@ -31,5 +24,4 @@
                 {% endfor %}
             </tbody>
         </table>
-    </div>
-{% endblock project-options %}
+{% endblock indicador_content %}

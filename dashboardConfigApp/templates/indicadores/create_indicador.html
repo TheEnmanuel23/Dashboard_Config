@@ -1,0 +1,18 @@
+{% extends "indicadores/baseIndicador.html" %}
+{% block indicador_content %}
+    <form action="" method="POST">
+        {{ IndicadorFormSet.management_form }}
+        {% load widget_tweaks %}
+        {% csrf_token %}
+        {% for indicadorFormSet in IndicadorFormSet %}
+            {% for formHidden in indicadorFormSet.hidden_fields %}
+                {{ formHidden }}
+            {% endfor %}
+            {% if indicadorFormSet.instance.pk %}
+                {{ indicadorFormSet.DELETE }}
+            {% endif %}
+            {{ indicadorFormSet.descripcion|add_class:"form-control"|attr:"required:required" }}
+        {% endfor %}
+        <input type="submit" class="btn btn-success" value="Guardar">
+    </form>
+{% endblock indicador_content %}

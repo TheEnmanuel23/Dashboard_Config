@@ -1,0 +1,13 @@
+{% extends "project/configProject.html" %}
+{% block project-options %}
+    <div class="container">
+        <nav>
+            <ol class="breadcrumb">
+                <li class="active" id="viewLayers"><a href="{% url 'indicadorList' project.pk %}">Ver indicadores</a></li>
+                <li><a href="{% url 'add_indicador' project.pk %}">Agregar indicador</a></li>
+            </ol>
+        </nav>
+        {% block indicador_content %}
+        {% endblock indicador_content %}
+    </div>
+{% endblock project-options %}

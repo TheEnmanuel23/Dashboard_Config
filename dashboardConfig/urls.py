@@ -34,5 +34,7 @@ urlpatterns = [
     url(r'^project/(?P<pk>\d+)/indicador', IndicadorList.as_view(), name='indicadorList'),
     url(r'^project/(\d+)/updateIndicador/(?P<pk>\d+)', UpdateIndicador.as_view(), name='updateIndicador'),
     url(r'^project/(\d+)/deleteIndicador/(?P<pk>\d+)', DeleteIndicador.as_view(), name='deleteIndicador'),
+    url(r'^project/(?P<pk>\d+)/add_indicador/', CreateIndicador.as_view(), name='add_indicador'),
+
 
 ]

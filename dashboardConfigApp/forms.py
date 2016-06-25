@@ -46,10 +46,12 @@ class LayerForm(forms.ModelForm):
 		]
 
 LayerFormSet = inlineformset_factory(Image, Capa, extra=0, form = LayerForm, can_delete=False)
-class CapaIndicadorForm(forms.ModelForm):
+class IndicadorForm(forms.ModelForm):
 	class Meta:
-		model = Condicion_Indicador
+		model = Indicador
 		fields = [
-			'valorComparar',
-			'color',
-		]
+        'descripcion',
+        'proyecto'
+    ]
+
+IndicadorFormSet = inlineformset_factory(Proyecto, Indicador, extra =1, form = IndicadorForm, can_delete= False)

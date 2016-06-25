@@ -228,3 +228,32 @@ class DeleteIndicador(DeleteView):
 
     def get_success_url(self):
         return reverse_lazy('indicadorList', kwargs = { 'pk' : self.object.proyecto.pk })
+
+class CreateIndicador(CreateView):
+    model = Proyecto
+    template_name = 'indicadores/create_indicador.html'
+    fields = [ 'nombre', 'descripcion' ]
+
+    def get_context_data(self, **kwargs):
+        context = super(CreateIndicador, self).get_context_data(**kwargs)
+        idProject = self.kwargs['pk']
+        image = Image.objects.get(proyecto__pk = idProject)
+        project = image.proyecto
+        context[ 'IndicadorFormSet' ] = IndicadorFormSet()
+        context[ 'singleImage' ] = image
+        context[ 'project' ] = project
+        return context
+
+    def post( self, request, *args, **kwargs ):
+        idProject = self.kwargs['pk']
+        self.object = Proyecto.objects.get(pk = idProject)
+        indicadorFormSet = IndicadorFormSet( request.POST, instance=self.object )
+        if (indicadorFormSet.is_valid( )):
+            return self.form_valid( indicadorFormSet )
+
+    def form_valid( self, indicadorFormSet ):
+        indicadorFormSet.save( )
+        return HttpResponseRedirect( self.get_success_url( ) )
+
+    def get_success_url(self):
+        return reverse_lazy('indicadorList', kwargs = { 'pk' : self.kwargs['pk'] })
